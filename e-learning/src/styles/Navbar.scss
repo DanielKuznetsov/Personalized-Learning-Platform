@@ -1,0 +1,46 @@
+.Navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2rem 1rem 1rem;
+  border-bottom: 1px solid black;
+
+  // background-color: #add8e6
+
+  .branding {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .logo-link {
+      svg {
+        width: 10rem;
+        height: 4rem;
+      }
+    }
+
+    .back-home {
+      text-decoration: none;
+      display: flex;
+      gap: 1rem;
+
+      color: black;
+
+      &-icon {
+      }
+      &-direction {
+      }
+    }
+  }
+
+  .auth {
+    &-login {
+      cursor: pointer;
+      background-color: transparent;
+      outline: none;
+      border: 1px solid black;
+      padding: 1rem;
+    }
+  }
+}
