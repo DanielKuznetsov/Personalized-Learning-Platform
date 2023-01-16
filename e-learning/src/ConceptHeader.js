@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/ConceptHeader.scss";
 
-function ConceptHeader({ concept }) {
+function ConceptHeader({ concept, shuffle }) {
   return (
     <div className="ConceptHeader">
       {concept ? (
@@ -20,7 +20,9 @@ function ConceptHeader({ concept }) {
       )}
 
       {concept && (
-        <button className="ConceptHeader-button">Practice the concept</button>
+        <button className="ConceptHeader-button">
+          {shuffle ? "Shuffle new" : "Practice the concept"}
+        </button>
       )}
     </div>
   );

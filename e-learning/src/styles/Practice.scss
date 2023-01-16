@@ -1,0 +1,18 @@
+.Practice {
+  padding: 3rem;
+
+  &-load-more {
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .load-btn {
+      border: 1px solid black;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      background-color: transparent;
+      outline: none;
+    }
+  }
+}
