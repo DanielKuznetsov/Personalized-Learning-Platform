@@ -32,7 +32,7 @@ function Navbar() {
         </a>
         <a className="back-home" href="back-home">
           <ion-icon className="back-icon" name="arrow-back-outline"></ion-icon>
-          <span className="back-direction">Course Overview</span>
+          <span className="back-direction">Course Overview | Home</span>
         </a>
       </div>
       <div className="auth">

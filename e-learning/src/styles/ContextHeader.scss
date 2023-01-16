@@ -1,0 +1,15 @@
+.ContextHeader {
+  &-info {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  &-image {
+    background-color: #aaa;
+    width: 8rem;
+    height: 4rem;
+  }
+  &-subject-name {
+    font-size: 2.4rem;
+  }
+}

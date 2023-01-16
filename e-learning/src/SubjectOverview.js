@@ -1,16 +1,12 @@
 import OverviewCard from "./OverviewCard";
 import "./styles/SubjectOverview.scss";
+import ContextHeader from "./ContextHeader";
 
 function SubjectOverview() {
   return (
     <div className="SubjectOverview">
       <div className="SubjectOverview-wrapper">
-        <div className="header">
-          <div className="header-info">
-            <div className="header-image">Calculus 1 image</div>
-            <p className="header-subject-name">Calculus 1</p>
-          </div>
-        </div>
+        <ContextHeader />
         <div className="main">
           <div className="main-sidebar">
             <ul className="main-sidebar-list">
