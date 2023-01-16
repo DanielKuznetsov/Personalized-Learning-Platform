@@ -3,7 +3,7 @@ import ConceptHeader from "./ConceptHeader";
 import OverviewCard from "./OverviewCard";
 import "./styles/Problem.scss";
 
-function Problem() {
+function Problem({ correct, wrong }) {
   return (
     <div className="Problem">
       {/* Pass a prop with a title and an image */}
@@ -13,24 +13,33 @@ function Problem() {
           <div className="question-description">
             <p className="content">
               How would we express, mathematically, the limit of the function
-              f(x) = x2 − x + 2 as x apprhematically, the limit of the function
-              f(x) = x2 − x + 2 as x approacoaches 3?
+              f(x) = x2 − x + 2 as x approaches 3?
             </p>
             {/* <p>Additonal information - given formula, etc</p> */}
           </div>
           <div className="question-options">
-            <a className="link" href="link-to-concept">
-              One
-            </a>
-            <a className="link" href="link-to-concept">
-              Two
-            </a>
-            <a className="link" href="link-to-concept">
-              Three
-            </a>
-            <a className="link" href="link-to-concept">
-              Four
-            </a>
+            <div
+              className={correct ? "option correct" : "option"}
+              href="link-to-concept"
+            >
+              <span className="letter">A</span>
+              <span className="answer">Four</span>
+            </div>
+            <div className="option" href="link-to-concept">
+              <span className="letter">B</span>
+              <span className="answer">Four</span>
+            </div>
+            <div className="option" href="link-to-concept">
+              <span className="letter">C</span>
+              <span className="answer">Four</span>
+            </div>
+            <div
+              className={wrong ? "option wrong" : "option"}
+              href="link-to-concept"
+            >
+              <span className="letter">D</span>
+              <span className="answer">Four</span>
+            </div>
           </div>
         </div>
         <div className="Problem-more">

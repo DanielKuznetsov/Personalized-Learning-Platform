@@ -13,18 +13,19 @@
 
   &-wrapper {
     display: flex;
-    justify-content: space-around;
+    gap: 10%;
+    justify-content: flex-start;
   }
 
   .question {
     width: 52.5%;
 
     &-description {
-      margin-bottom: 3rem;
+      margin-bottom: 5rem;
 
       .content {
         font-size: 2rem;
-        background-color: yellow;
+        // background-color: yellow;
       }
     }
     &-options {
@@ -32,15 +33,42 @@
       flex-direction: column;
       gap: 1.5rem;
 
-      .link {
-        padding: 0.5rem 1rem;
-        // background-color: yellowgreen;
+      .option {
+        cursor: pointer;
+        background-color: #fff;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.75);
+        border-radius: 1rem;
+
+        display: flex;
+        align-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+
+        &.correct {
+          background-color: rgba(0, 128, 0, 0.2);
+        }
+
+        &.wrong {
+          background-color: rgba(255, 0, 0, 0.2);
+        }
+
+        .letter {
+          padding: 1.5rem 1.5rem;
+          font-weight: 600;
+          border-right: 1px solid rgba(0, 0, 0, 0.15);
+          background-color: rgba(0, 0, 0, 0.025);
+        }
+
+        .answer {
+          padding-left: 1.35rem;
+        }
       }
     }
   }
 
   &-more {
     // padding-right: 4rem;
+
     .title {
       font-size: 2.8rem;
       font-weight: 600;
