@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
 import SubjectOverview from "./SubjectOverview";
+import "./styles/App.scss"
 
 function App() {
   return (

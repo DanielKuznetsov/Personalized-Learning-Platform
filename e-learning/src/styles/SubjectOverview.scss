@@ -1,5 +1,7 @@
 .SubjectOverview {
   padding: 3rem;
+  background-color: yellow;
+
   &-wrapper {
     padding: 2rem;
     background-color: #fff;
@@ -24,7 +26,11 @@
     }
 
     .main {
+      display: flex;
+      gap: 4rem;
+
       &-sidebar {
+        flex: 1;
         &-list {
           padding: 1rem 0 1rem 2rem;
           list-style: none;
@@ -78,6 +84,27 @@
             opacity: 1;
           }
         }
+      }
+
+      &-context {
+        flex: 4;
+
+        .subtitle-name {
+           font-size: 2.4rem;
+           font-weight: 600;
+           margin-bottom: 2rem; 
+        }
+
+        .context {
+          word-break: break-all;
+          margin-bottom: 2.5rem; 
+        }
+      }
+
+      &-cards {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        gap: 1rem;
       }
     }
   }

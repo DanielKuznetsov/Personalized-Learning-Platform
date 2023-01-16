@@ -1,4 +1,4 @@
-import React from "react";
+import OverviewCard from "./OverviewCard";
 import "./styles/SubjectOverview.scss";
 
 function SubjectOverview() {
@@ -24,7 +24,37 @@ function SubjectOverview() {
               <li className="main-sidebar-item">Areas Under a Graph</li>
             </ul>
           </div>
-          <div className="main-concepts"></div>
+          <div className="main-context">
+            <p className="subtitle-name">Limits</p>
+            <p className="context">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              auctor, magna at blandit malesuada, ipsum magna congue felis, non
+              ornare ipsum massa non erat. Sed bibendum, magna in hendrerit
+              tempor, odio dolor placerat nibh, at aliquet ligula augue quis
+              nulla. Nam euismod, risus id porttitor congue, velit nibh
+              tincidunt ipsum, vel semper velit velit in ipsum. Sed id nulla a
+              quam suscipit hendrerit. Sed auctor, elit a dictum malesuada, eros
+              massa suscipit ligula, id euismod nulla risus at libero. Lorem
+              <br />
+              <br />
+              ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor,
+              magna at blandit malesuada, ipsum magna congue felis, non ornare
+              ipsum massa non erat. Sed bibendum, magna in hendrerit tempor,
+              odio dolor placerat nibh, at aliquet ligula augue quis nulla. Nam
+              euismod, risus id porttitor congue, velit nibh tincidunt ipsum,
+              vel semper velit velit in ipsum. Sed id nulla a quam suscipit
+              hendrerit. Sed auctor, elit a dictum malesuada, eros massa
+              suscipit ligula, id euismod nulla risus at libero.
+            </p>
+            <div className="main-cards">
+              <OverviewCard />
+              <OverviewCard />
+              <OverviewCard />
+              <OverviewCard />
+              <OverviewCard />
+              <OverviewCard />
+            </div>
+          </div>
         </div>
       </div>
     </div>
