@@ -1,9 +1,10 @@
 import React from "react";
 import ConceptHeader from "./ConceptHeader";
 import OverviewCard from "./OverviewCard";
+import Solution from "./Solution";
 import "./styles/Problem.scss";
 
-function Problem({ correct, wrong }) {
+function Problem({ correct, wrong, solution }) {
   return (
     <div className="Problem">
       {/* Pass a prop with a title and an image */}
@@ -17,29 +18,36 @@ function Problem({ correct, wrong }) {
             </p>
             {/* <p>Additonal information - given formula, etc</p> */}
           </div>
-          <div className="question-options">
-            <div
-              className={correct ? "option correct" : "option"}
-              href="link-to-concept"
-            >
+          {/* Pass a prop whether correct or not, and move into its own component */}
+          {/* <div className="question-options">
+            <div className={correct ? "option correct" : "option"}>
               <span className="letter">A</span>
               <span className="answer">Four</span>
             </div>
-            <div className="option" href="link-to-concept">
+            <div className="option">
               <span className="letter">B</span>
               <span className="answer">Four</span>
             </div>
-            <div className="option" href="link-to-concept">
+            <div className="option">
               <span className="letter">C</span>
               <span className="answer">Four</span>
             </div>
-            <div
-              className={wrong ? "option wrong" : "option"}
-              href="link-to-concept"
-            >
+            <div className={wrong ? "option wrong" : "option"}>
               <span className="letter">D</span>
               <span className="answer">Four</span>
             </div>
+          </div> */}
+
+          <div className="question-solution">
+            <Solution />
+            <Solution />
+            <Solution />
+            <Solution />
+          </div>
+
+          <div className="Problem-buttons">
+            <button className="btn">view solution</button>
+            <button className="btn">check</button>
           </div>
         </div>
         <div className="Problem-more">
