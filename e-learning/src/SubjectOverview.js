@@ -14,14 +14,47 @@ function SubjectOverview() {
         <div className="main">
           <div className="main-sidebar">
             <ul className="main-sidebar-list">
-              <li className="main-sidebar-item">Limits</li>
-              <li className="main-sidebar-item">Derivatives</li>
-              <li className="main-sidebar-item">Differentiation Rules</li>
-              <li className="main-sidebar-item">Applications of Derivatives</li>
-              <li className="main-sidebar-item">Integrals</li>
-              <li className="main-sidebar-item">Techniques of integration</li>
-              <li className="main-sidebar-item">Applications of Integrals</li>
-              <li className="main-sidebar-item">Areas Under a Graph</li>
+              <li className="main-sidebar-item active">
+                <a className="link" href="-">
+                  Limits
+                </a>
+              </li>
+              <li className="main-sidebar-item">
+                {" "}
+                <a className="link" href="-">
+                  Derivatives
+                </a>
+              </li>
+              <li className="main-sidebar-item">
+                <a className="link" href="-">
+                  Differentiation Rules
+                </a>
+              </li>
+              <li className="main-sidebar-item">
+                <a className="link" href="-">
+                  Applications of Derivatives
+                </a>
+              </li>
+              <li className="main-sidebar-item">
+                <a className="link" href="-">
+                  Integrals
+                </a>
+              </li>
+              <li className="main-sidebar-item">
+                <a className="link" href="-">
+                  Techniques of integration
+                </a>
+              </li>
+              <li className="main-sidebar-item">
+                <a className="link" href="-">
+                  Applications of Integrals
+                </a>
+              </li>
+              <li className="main-sidebar-item">
+                <a className="link" href="-">
+                  Areas Under a Graph
+                </a>
+              </li>
             </ul>
           </div>
           <div className="main-context">
