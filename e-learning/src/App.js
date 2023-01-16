@@ -4,12 +4,14 @@ import Concept from "./Concept";
 import Practice from "./Practice";
 import "./styles/App.scss";
 import Sidebar from "./Sidebar";
+import Problem from "./Problem";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <SubjectOverview />
+      <Problem />
+
       {/* <div className="loggedIn-layout">
         <Sidebar />
         <Concept />
