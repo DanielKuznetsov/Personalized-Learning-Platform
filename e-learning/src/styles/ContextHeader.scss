@@ -1,4 +1,7 @@
 .ContextHeader {
+  display: flex;
+  justify-content: space-between;
+
   &-info {
     display: flex;
     gap: 2rem;
@@ -11,5 +14,27 @@
   }
   &-subject-name {
     font-size: 2.4rem;
+
+    &.concept {
+      display: flex;
+      flex-direction: column;
+
+      .subtitle {
+        font-size: 1.8rem;
+        color: rgba(0, 0, 0, 0.75);
+      }
+
+      .title {
+        font-size: 2.4rem;
+      }
+    }
+  }
+
+  &-button {
+    border: 1px solid black;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
   }
 }
