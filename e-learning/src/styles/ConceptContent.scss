@@ -1,0 +1,22 @@
+.ConceptContent {
+  &-context {
+    flex: 4;
+
+    .subtitle-name {
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    .context {
+      word-break: break-all;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &-cards {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1rem;
+  }
+}

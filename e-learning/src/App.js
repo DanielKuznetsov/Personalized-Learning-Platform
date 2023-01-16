@@ -1,6 +1,7 @@
 import Navbar from "./Navbar";
 import SubjectOverview from "./SubjectOverview";
-import "./styles/App.scss"
+import "./styles/App.scss";
+import Concept from "./Concept";
 
 function App() {
   return (

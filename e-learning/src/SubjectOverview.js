@@ -1,12 +1,12 @@
-import OverviewCard from "./OverviewCard";
 import "./styles/SubjectOverview.scss";
-import ContextHeader from "./ContextHeader";
+import ConceptHeader from "./ConceptHeader";
+import ConceptContent from "./ConceptContent";
 
 function SubjectOverview() {
   return (
     <div className="SubjectOverview">
       <div className="SubjectOverview-wrapper">
-        <ContextHeader />
+        <ConceptHeader />
         <div className="main">
           <div className="main-sidebar">
             <ul className="main-sidebar-list">
@@ -53,37 +53,7 @@ function SubjectOverview() {
               </li>
             </ul>
           </div>
-          <div className="main-context">
-            <p className="subtitle-name">Limits</p>
-            <p className="context">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              auctor, magna at blandit malesuada, ipsum magna congue felis, non
-              ornare ipsum massa non erat. Sed bibendum, magna in hendrerit
-              tempor, odio dolor placerat nibh, at aliquet ligula augue quis
-              nulla. Nam euismod, risus id porttitor congue, velit nibh
-              tincidunt ipsum, vel semper velit velit in ipsum. Sed id nulla a
-              quam suscipit hendrerit. Sed auctor, elit a dictum malesuada, eros
-              massa suscipit ligula, id euismod nulla risus at libero. Lorem
-              <br />
-              <br />
-              ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor,
-              magna at blandit malesuada, ipsum magna congue felis, non ornare
-              ipsum massa non erat. Sed bibendum, magna in hendrerit tempor,
-              odio dolor placerat nibh, at aliquet ligula augue quis nulla. Nam
-              euismod, risus id porttitor congue, velit nibh tincidunt ipsum,
-              vel semper velit velit in ipsum. Sed id nulla a quam suscipit
-              hendrerit. Sed auctor, elit a dictum malesuada, eros massa
-              suscipit ligula, id euismod nulla risus at libero.
-            </p>
-            <div className="main-cards">
-              <OverviewCard />
-              <OverviewCard />
-              <OverviewCard />
-              <OverviewCard />
-              <OverviewCard />
-              <OverviewCard />
-            </div>
-          </div>
+          <ConceptContent />
         </div>
       </div>
     </div>
