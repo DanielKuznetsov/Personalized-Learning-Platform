@@ -16,9 +16,15 @@ function Solution() {
       </div>
 
       {isOpen ? (
-        <p className="why">
-          dsfdsfksjabfnjksadbnfkjdasdsfdsfksjabfnjksadbnfkjdasdsfdsfdsfdsfksjabfnjksadbnfkjdasdsfdsfksjabfnjksadbnfkjdasdsfdsfksjabfnjksadbnfkjdasksjabfnjksadbnfkjdasdsfdsfksjabfnjksadbnfkjdas
-        </p>
+        <div className="why-content">
+          <p className="why-text">
+            dsfdsfksjabfnjksadbnfkjdasdsfdsfksjabfnjksadbnfkjdasdsfdsfdsfdsfksjabfnjksadbnfkjdasdsfdsfksjabfnjksadbnfkjdasdsfdsfksjabfnjksadbnfkjdasksjabfnjksadbnfkjdasdsfdsfksjabfnjksadbnfkjdas
+          </p>
+          <a className="concept-link" href="go-to-concept">
+            <span>Go to the Concept </span>
+            <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+          </a>
+        </div>
       ) : (
         ""
       )}

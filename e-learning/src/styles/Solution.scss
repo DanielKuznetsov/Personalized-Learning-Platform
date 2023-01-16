@@ -1,5 +1,6 @@
 .Solution {
   border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
   text-decoration: none;
   padding: 1.5rem;
   background-color: rgba(255, 255, 255, 0.8);
@@ -35,7 +36,36 @@
     }
   }
 
-  .why {
+  .why-content {
     margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+
+    .why-text {
+    }
+
+    .concept-link {
+        border-radius: 1rem;
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.75);
+      cursor: pointer;
+      width: auto;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.15);
+
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: flex-start;
+
+
+
+      ion-icon {
+        font-size: 1.8rem;
+      }
+    }
   }
 }

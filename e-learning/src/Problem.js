@@ -4,7 +4,7 @@ import OverviewCard from "./OverviewCard";
 import Solution from "./Solution";
 import "./styles/Problem.scss";
 
-function Problem({ correct, wrong, solution }) {
+function Problem({ correct, wrong, solution, question }) {
   return (
     <div className="Problem">
       {/* Pass a prop with a title and an image */}
@@ -18,37 +18,49 @@ function Problem({ correct, wrong, solution }) {
             </p>
             {/* <p>Additonal information - given formula, etc</p> */}
           </div>
+
           {/* Pass a prop whether correct or not, and move into its own component */}
-          {/* <div className="question-options">
-            <div className={correct ? "option correct" : "option"}>
-              <span className="letter">A</span>
-              <span className="answer">Four</span>
-            </div>
-            <div className="option">
-              <span className="letter">B</span>
-              <span className="answer">Four</span>
-            </div>
-            <div className="option">
-              <span className="letter">C</span>
-              <span className="answer">Four</span>
-            </div>
-            <div className={wrong ? "option wrong" : "option"}>
-              <span className="letter">D</span>
-              <span className="answer">Four</span>
-            </div>
-          </div> */}
 
-          <div className="question-solution">
-            <Solution />
-            <Solution />
-            <Solution />
-            <Solution />
-          </div>
+          {solution ? (
+            <div className="question-solution">
+              <Solution />
+              <Solution />
+              <Solution />
+              <Solution />
+            </div>
+          ) : (
+            <div className="question-options">
+              <div className={correct ? "option correct" : "option"}>
+                <span className="letter">A</span>
+                <span className="answer">Four</span>
+              </div>
+              <div className="option">
+                <span className="letter">B</span>
+                <span className="answer">Four</span>
+              </div>
+              <div className="option">
+                <span className="letter">C</span>
+                <span className="answer">Four</span>
+              </div>
+              <div className={wrong ? "option wrong" : "option"}>
+                <span className="letter">D</span>
+                <span className="answer">Four</span>
+              </div>
+            </div>
+          )}
 
-          <div className="Problem-buttons">
-            <button className="btn">view solution</button>
-            <button className="btn">check</button>
-          </div>
+          {solution ? (
+            <div className="Problem-buttons">
+              <a href="try-new" className="btn">
+                try new
+              </a>
+            </div>
+          ) : (
+            <div className="Problem-buttons">
+              <button className="btn">view solution</button>
+              <button className="btn">check</button>
+            </div>
+          )}
         </div>
         <div className="Problem-more">
           <p className="title">Additional Problems</p>
