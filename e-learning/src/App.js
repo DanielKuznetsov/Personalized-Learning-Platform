@@ -10,7 +10,9 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Problem correct wrong />
+      <Problem solution />
+
+      {/* <Problem correct wrong /> */}
 
       {/* <div className="loggedIn-layout">
         <Sidebar />

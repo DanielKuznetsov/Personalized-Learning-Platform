@@ -1,0 +1,36 @@
+{
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^6.7.0",
+    "helmet": "^6.0.1",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.4",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.0",
+    "nodemon": "^2.0.20",
+    "validator": "^13.7.0",
+    "xss-clean": "^0.1.1"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "learning-platform",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielKuznetsov/Personalized-Learning-Platform.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielKuznetsov/Personalized-Learning-Platform/issues"
+  },
+  "homepage": "https://github.com/DanielKuznetsov/Personalized-Learning-Platform#readme",
+  "description": ""
+}
