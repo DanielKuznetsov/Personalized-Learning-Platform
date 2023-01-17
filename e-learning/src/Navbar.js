@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 import "./styles/Navbar.scss";
 
 function Navbar({ loggedIn }) {
@@ -35,7 +36,11 @@ function Navbar({ loggedIn }) {
           <span className="back-direction">Course Overview | Home</span>
         </a>
       </div>
-      {loggedIn ? (
+      {/* <div>
+        <Button text="Login" />
+        <Button text="Sign Up" />
+      </div> */}
+      {/* {loggedIn ? (
         <div className="user">
           <ion-icon name="notifications-outline"></ion-icon>
           <div className="user-image">User Image</div>
@@ -48,7 +53,7 @@ function Navbar({ loggedIn }) {
         <div className="auth">
           <button className="auth-login">Login</button>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

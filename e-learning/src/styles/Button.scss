@@ -1,0 +1,32 @@
+.Button {
+  cursor: pointer;
+  &-btn {
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    background: hsla(228, 87%, 48%, 1);
+    padding: 1rem 1.5rem;
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 600;
+    font-family: "Nunito", sans-serif;
+
+    background: linear-gradient(
+      45deg,
+      hsla(228, 87%, 48%, 1) 0%,
+      hsla(189, 100%, 70%, 1) 100%
+    );
+
+    background: -moz-linear-gradient(
+      45deg,
+      hsla(228, 87%, 48%, 1) 0%,
+      hsla(189, 100%, 70%, 1) 100%
+    );
+
+    background: -webkit-linear-gradient(
+      45deg,
+      hsla(228, 87%, 48%, 1) 0%,
+      hsla(189, 100%, 70%, 1) 100%
+    );
+  }
+}

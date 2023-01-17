@@ -7,50 +7,52 @@ import "./styles/App.scss";
 import Problem from "./Problem";
 // import { useEffect } from "react";
 import axios from "axios";
+import Home from "./Home";
 
 function App() {
-  async function loginPets() {
-    try {
-      await axios.post(
-        "http://localhost:4000/api/v1/pets/login",
-        {
-          email: "theo@example.com",
-          password: "teddytheo",
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
-      );
+  // async function loginPets() {
+  //   try {
+  //     await axios.post(
+  //       "http://localhost:4000/api/v1/pets/login",
+  //       {
+  //         email: "theo@example.com",
+  //         password: "teddytheo",
+  //       },
+  //       {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         withCredentials: true,
+  //       }
+  //     );
 
-      // console.log(JSON.parse(pets.request.response).token);
-    } catch (err) {
-      console.log(err.response.data);
-    }
-  }
+  //     // console.log(JSON.parse(pets.request.response).token);
+  //   } catch (err) {
+  //     console.log(err.response.data);
+  //   }
+  // }
 
-  async function signout() {
-    try {
-      await axios.get("http://localhost:4000/api/v1/pets/logout", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        withCredentials: true,
-      });
-    } catch (err) {
-      console.log(err.response.data);
-    }
-  }
+  // async function signout() {
+  //   try {
+  //     await axios.get("http://localhost:4000/api/v1/pets/logout", {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       withCredentials: true,
+  //     });
+  //   } catch (err) {
+  //     console.log(err.response.data);
+  //   }
+  // }
 
   return (
     <div className="App">
-      <Navbar />
-      <button onClick={() => loginPets()}>Login</button>
-      <button onClick={() => signout()}>Signout</button>
+      <Home />
+      {/* <Navbar /> */}
+      {/* <button onClick={() => loginPets()}>Login</button>
+      <button onClick={() => signout()}>Signout</button> */}
 
-      <Problem solution />
+      {/* <Problem solution /> */}
       {/* <Problem correct wrong /> */}
 
       {/* <div className="loggedIn-layout">
