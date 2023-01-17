@@ -6,7 +6,7 @@ function Navbar({ loggedIn }) {
   return (
     <div className="Navbar">
       <div className="branding">
-        <a className="logo-link" href="nothing-yet">
+        <a className="logo-link" href="later-home">
           <svg
             width="159"
             height="75"
@@ -31,16 +31,14 @@ function Navbar({ loggedIn }) {
             />
           </svg>
         </a>
-        <a className="back-home" href="back-home">
+        {/* ONLY WHEN LOGGED IN */}
+        {/* <a className="back-home" href="back-home">
           <ion-icon className="back-icon" name="arrow-back-outline"></ion-icon>
           <span className="back-direction">Course Overview | Home</span>
-        </a>
+        </a> */}
       </div>
-      {/* <div>
-        <Button text="Login" />
-        <Button text="Sign Up" />
-      </div> */}
-      {/* {loggedIn ? (
+
+      {loggedIn ? (
         <div className="user">
           <ion-icon name="notifications-outline"></ion-icon>
           <div className="user-image">User Image</div>
@@ -51,9 +49,10 @@ function Navbar({ loggedIn }) {
         </div>
       ) : (
         <div className="auth">
-          <button className="auth-login">Login</button>
+          <Button text="Login" />
+          <Button text="Sign Up" />
         </div>
-      )} */}
+      )}
     </div>
   );
 }

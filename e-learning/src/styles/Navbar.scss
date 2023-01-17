@@ -1,10 +1,11 @@
 .Navbar {
+  font-family: "Nunito", sans-serif;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 2rem 2rem 1rem 1rem;
-  border-bottom: 1px solid black;
+  // border-bottom: 1px solid black;
 
   .branding {
     display: flex;
@@ -12,6 +13,8 @@
     gap: 2rem;
 
     .logo-link {
+      margin-bottom: -1rem;
+
       svg {
         width: 10rem;
         height: 4rem;
@@ -20,10 +23,11 @@
 
     .back-home {
       text-decoration: none;
+      align-items: center;
       display: flex;
       gap: 1rem;
 
-      color: black;
+      color: #36454f;
 
       &-icon {
       }
@@ -33,13 +37,8 @@
   }
 
   .auth {
-    &-login {
-      cursor: pointer;
-      background-color: transparent;
-      outline: none;
-      border: 1px solid black;
-      padding: 1rem;
-    }
+    display: flex;
+    gap: 1rem;
   }
 
   .user {
