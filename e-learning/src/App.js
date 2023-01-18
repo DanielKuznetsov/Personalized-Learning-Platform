@@ -1,12 +1,12 @@
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 // import SubjectOverview from "./SubjectOverview";
 // import Concept from "./Concept";
 // import Practice from "./Practice";
 import "./styles/App.scss";
 // import Sidebar from "./Sidebar";
-import Problem from "./Problem";
+// import Problem from "./Problem";
 // import { useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 import Home from "./Home";
 
 function App() {
