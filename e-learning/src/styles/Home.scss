@@ -69,28 +69,28 @@
     }
 
     .features {
-      &-wrapper {
-        display: flex;
-        justify-content: space-around;
+      margin-top: 10rem;
 
-        .feature {
-          width: 27rem;
-          height: auto;
+      &-wrapper {
+        gap: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .advantages {
+          //   background-color: yellowgreen;
+        //   padding-top: 3.5rem;
+          width: 25rem;
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
-            // background-color: yellowgreen;
 
-          .icon {
-          }
-
-          .title {
+          span {
+            font-size: 4.35rem;
             font-weight: 700;
-            font-size: 1.8rem;
           }
-          .subtitle {
+
+          p {
             margin-top: 1.25rem;
-            font-weight: 300;
           }
         }
       }

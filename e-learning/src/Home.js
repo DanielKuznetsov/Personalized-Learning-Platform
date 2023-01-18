@@ -55,20 +55,25 @@ function Home() {
         </div>
         <div className="features">
           <div className="features-wrapper">
+            <div class="advantages">
+              <span>Our</span>
+              <span>Advantages</span>
+              <p>This is a list of notable features we've implemented.</p>
+            </div>
             <FeatureCard
               illustrationName={solution}
               title="Thorough Explanations"
-              subtitle="Thorough ExplanationsThorough ExplanationsThorough Explanations"
+              subtitle="Understand the reasoning behind the solutions, detailed explanations and a focus on the why, not just the how."
             />
             <FeatureCard
               illustrationName={question}
-              title="Thorough Explanations"
-              subtitle="Thorough ExplanationsThorough ExplanationsThorough Explanations"
+              title="Practice questions"
+              subtitle="Practice with our customizable difficulty feature, choose from various levels to challenge yourself."
             />
             <FeatureCard
               illustrationName={test}
-              title="Thorough Explanations"
-              subtitle="Thorough ExplanationsThorough ExplanationsThorough Explanations"
+              title="Test Yourself"
+              subtitle="Create custom tests, easily design and administer assessments tailored to your specific needs."
             />
           </div>
         </div>
