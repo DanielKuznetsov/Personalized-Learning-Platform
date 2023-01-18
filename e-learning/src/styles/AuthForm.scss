@@ -1,0 +1,11 @@
+.AuthForm {
+  background-color: #eee;
+  display: flex;
+
+  &-form-wrapper {
+    flex: 6;
+  }
+  &-illustration {
+    flex: 5;
+  }
+}

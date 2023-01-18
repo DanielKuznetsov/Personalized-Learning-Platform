@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import "./styles/Navbar.scss";
+import { Link } from "react-router-dom";
 
 function Navbar({ loggedIn }) {
   return (
@@ -33,8 +34,12 @@ function Navbar({ loggedIn }) {
         </div>
       ) : (
         <div className="auth">
-          <Button text="Login" />
-          <Button text="Sign Up" />
+          <Link to="/login">
+            <Button text="Login" />
+          </Link>
+          <Link to="/signup">
+            <Button text="Sign Up" />
+          </Link>
         </div>
       )}
     </div>
