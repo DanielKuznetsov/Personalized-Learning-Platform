@@ -12,25 +12,6 @@
     align-items: center;
     gap: 2rem;
 
-    .logo {
-      margin-bottom: -1rem;
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-      text-decoration: none;
-
-      &-gif {
-        width: 4rem;
-        height: 4rem;
-        border-radius: 1rem;
-      }
-
-      &-text {
-        font-size: 2.4rem;
-        font-family: "Bungee Spice", cursive;
-      }
-    }
-
     .back-home {
       text-decoration: none;
       align-items: center;

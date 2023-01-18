@@ -2,19 +2,13 @@ import React from "react";
 import Button from "./Button";
 import "./styles/Navbar.scss";
 import { Link } from "react-router-dom";
+import Logo from "./Logo";
 
 function Navbar({ loggedIn }) {
   return (
     <div className="Navbar">
       <div className="branding">
-        <a className="logo" href="later-home">
-          <img
-            className="logo-gif"
-            src="https://media.giphy.com/media/xT9IgAakXAITtXIWje/giphy.gif"
-            alt="Logo"
-          ></img>
-          <p className="logo-text">theknown.io</p>
-        </a>
+        <Logo />
 
         {/* ONLY WHEN LOGGED IN */}
         {/* <a className="back-home" href="back-home">
