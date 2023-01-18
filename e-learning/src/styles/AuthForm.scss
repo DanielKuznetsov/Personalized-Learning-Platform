@@ -41,6 +41,7 @@
 
         &-label {
           font-size: 1.6rem;
+          cursor: pointer;
         }
 
         &-input {
@@ -59,18 +60,38 @@
           }
         }
       }
-    }
 
-    .no-account {
-      &-text {
-      }
-      &-link {
+      .no-account {
+        margin-top: 5rem;
+
+        &-text {
+          opacity: 0.8;
+        }
+
+        &-link {
+          color: rgba(16, 59, 229, 1);
+          text-decoration: none;
+          font-weight: 600;
+          margin-left: 0.25rem;
+          transition: all 0.2s ease-in-out;
+          padding: 0.2rem;
+          border-radius: 0.35rem;
+
+          &:hover {
+            background-color: rgba(102, 232, 255, 0.15);
+          }
+        }
       }
     }
   }
 
   &-illustration {
-    background-color: aquamarine;
+    // background-color: aquamarine;
     flex: 5;
+    margin-left: -7.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

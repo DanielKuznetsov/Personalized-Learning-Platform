@@ -1,6 +1,8 @@
 import Button from "./Button";
 import Logo from "./Logo";
 import "./styles/AuthForm.scss";
+import signInSuccess from "./images/sign-in-success.json";
+import LottieGif from "./LottieGif";
 
 function AuthForm() {
   return (
@@ -34,15 +36,17 @@ function AuthForm() {
             </label>
             <Button submit fullWidth text="Login" />
           </form>
-        </div>
-        <div className="no-account">
-          <span className="no-account-text">Don't have an account yet?</span>
-          <a className="no-account-link" href="to-sign-up">
-            Sign Up
-          </a>
+          <div className="no-account">
+            <span className="no-account-text">Don't have an account yet? </span>
+            <a className="no-account-link" href="to-sign-up">
+              Sign Up
+            </a>
+          </div>
         </div>
       </div>
-      <div className="AuthForm-illustration">Illustration</div>
+      <div className="AuthForm-illustration">
+        <LottieGif illustration={signInSuccess} width={500} height={500} />
+      </div>
     </div>
   );
 }
