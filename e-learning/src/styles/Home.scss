@@ -171,7 +171,6 @@
 
           .overlay {
             position: absolute;
-            text-shadow: 0 0 3px rgb(17, 24, 39);
             -webkit-text-stroke: 3px rgb(17, 24, 39);
             color: rgb(17, 24, 39);
             left: 0;
@@ -183,7 +182,7 @@
       &-subtitle {
         margin-top: 1rem;
         font-size: 1.8rem;
-        padding: 0 6.5rem;
+        padding: 0 7rem;
       }
     }
   }
