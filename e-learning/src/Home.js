@@ -4,21 +4,16 @@ import Navbar from "./Navbar";
 import "./styles/Home.scss";
 import homework from "./images/homework.json";
 import solution from "./images/solution.json";
+import question from "./images/question.json";
+import test from "./images/test.json";
 import Lottie from "react-lottie";
+import FeatureCard from "./FeatureCard";
 
 function Home() {
-  const defaultOptions1 = {
+  const defaultOptions = {
     loop: true,
     autoplay: true,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
-  const defaultOptions2 = {
-    loop: true,
-    autoplay: true,
-    animationData: solution,
+    animationData: homework,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -55,21 +50,26 @@ function Home() {
             </div>
           </div>
           <div className="gif-hw">
-            <Lottie options={defaultOptions1} height={400} width={450} />
+            <Lottie options={defaultOptions} height={400} width={450} />
           </div>
         </div>
         <div className="features">
           <div className="features-wrapper">
-            <div className="feature">
-              <Lottie
-                className="icon"
-                options={defaultOptions2}
-                height={120}
-                width={90}
-              />
-              <p className="title">Thorough Explanations</p>
-              <p className="subtitle">Thorough ExplanationsThorough ExplanationsThorough Explanations</p>
-            </div>
+            <FeatureCard
+              illustrationName={solution}
+              title="Thorough Explanations"
+              subtitle="Thorough ExplanationsThorough ExplanationsThorough Explanations"
+            />
+            <FeatureCard
+              illustrationName={question}
+              title="Thorough Explanations"
+              subtitle="Thorough ExplanationsThorough ExplanationsThorough Explanations"
+            />
+            <FeatureCard
+              illustrationName={test}
+              title="Thorough Explanations"
+              subtitle="Thorough ExplanationsThorough ExplanationsThorough Explanations"
+            />
           </div>
         </div>
       </div>
