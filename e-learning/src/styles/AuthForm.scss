@@ -1,11 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,200;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700;1,6..72,800&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+
 .AuthForm {
-  background-color: #eee;
   display: flex;
+  height: 100vh;
+  padding: 3rem;
 
   &-form-wrapper {
+    // background-color: yellowgreen;
     flex: 6;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    .content {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .title {
+        font-family: "Montserrat", sans-serif;
+        margin-top: 3rem;
+        font-size: 4.8rem;
+        font-weight: 600;
+      }
+      .subtitle {
+        text-align: center;
+        margin-top: 1rem;
+      }
+
+      .form {
+        width: 100%;
+        margin-top: 5rem;
+        display: flex;
+        gap: 2rem;
+        flex-direction: column;
+        // background-color: yellow;
+
+        &-label {
+          font-size: 1.6rem;
+        }
+
+        &-input {
+          font-size: 1.6rem;
+          margin-top: 1rem;
+          border-radius: 1rem;
+          width: 100%;
+          outline: rgba(16, 59, 229, 0.3);
+          padding: 1.25rem 2rem;
+          border: 2px solid rgba(0, 0, 0, 0.15);
+          transition: all 0.2s ease-in-out;
+
+          &:active,
+          &:focus {
+            border: 2px solid rgba(16, 59, 229, 0.75);
+          }
+        }
+      }
+    }
+
+    .no-account {
+      &-text {
+      }
+      &-link {
+      }
+    }
   }
+
   &-illustration {
+    background-color: aquamarine;
     flex: 5;
   }
 }

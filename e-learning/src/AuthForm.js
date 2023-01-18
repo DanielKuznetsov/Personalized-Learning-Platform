@@ -1,4 +1,5 @@
 import Button from "./Button";
+import Logo from "./Logo";
 import "./styles/AuthForm.scss";
 
 function AuthForm() {
@@ -6,9 +7,12 @@ function AuthForm() {
     <div className="AuthForm">
       <div className="AuthForm-form-wrapper">
         <div className="content">
-          <div>Logo and the name</div>
-          <p className="title">hello again</p>
-          <p className="subtitle">some descriptive text</p>
+          <Logo />
+          <p className="title">Welcome Back!</p>
+          <p className="subtitle">
+            Happy to see you back. Consistency is the key! Login to your account
+            to view today's challenge.
+          </p>
           <form className="form">
             <label className="form-label" name="email">
               Email:
@@ -20,7 +24,7 @@ function AuthForm() {
               />
             </label>
             <label className="form-label" name="password">
-              Password
+              Password:
               <input
                 className="form-input"
                 type="password"
@@ -28,7 +32,7 @@ function AuthForm() {
                 placeholder="Your password"
               />
             </label>
-            <Button submit text="Login" />
+            <Button submit fullWidth text="Login" />
           </form>
         </div>
         <div className="no-account">

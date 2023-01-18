@@ -1,12 +1,29 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import "./styles/Button.scss";
 
-function Button({ text, shadow, submit }) {
+function Button({ text, shadow, submit, fullWidth }) {
+  const [classes, setClasses] = useState("Button-btn");
+
+  useEffect(() => {
+    if (shadow) {
+      setClasses("Button-btn shadow");
+    }
+
+    if (shadow && fullWidth) {
+      setClasses("Button-btn shadow full-width");
+    }
+
+    if (fullWidth) {
+      setClasses("Button-btn full-width");
+    }
+  }, [shadow, submit, fullWidth]);
+
   return (
     <div className="Button">
       <button
         type={submit ? "submit" : ""}
-        className={shadow ? "Button-btn shadow" : "Button-btn"}
+        className={classes}
+        // className={shadow ? "Button-btn shadow" : "Button-btn"}
       >
         {text || "Add text"}
       </button>
