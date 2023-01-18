@@ -8,8 +8,7 @@
       margin-top: 7rem;
       display: flex;
       align-items: center;
-      gap: 12.5rem;
-      justify-content: center;
+      justify-content: space-around;
 
       .content {
         width: 40.5%;
@@ -65,6 +64,34 @@
         }
         .sub-text {
           font-weight: 600;
+        }
+      }
+    }
+
+    .features {
+      &-wrapper {
+        display: flex;
+        justify-content: space-around;
+
+        .feature {
+          width: 27rem;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+            // background-color: yellowgreen;
+
+          .icon {
+          }
+
+          .title {
+            font-weight: 700;
+            font-size: 1.8rem;
+          }
+          .subtitle {
+            margin-top: 1.25rem;
+            font-weight: 300;
+          }
         }
       }
     }

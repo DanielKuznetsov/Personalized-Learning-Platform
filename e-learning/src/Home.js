@@ -3,13 +3,22 @@ import Button from "./Button";
 import Navbar from "./Navbar";
 import "./styles/Home.scss";
 import homework from "./images/homework.json";
+import solution from "./images/solution.json";
 import Lottie from "react-lottie";
 
 function Home() {
-  const defaultOptions = {
+  const defaultOptions1 = {
     loop: true,
     autoplay: true,
-    animationData: homework,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const defaultOptions2 = {
+    loop: true,
+    autoplay: true,
+    animationData: solution,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -46,12 +55,21 @@ function Home() {
             </div>
           </div>
           <div className="gif-hw">
-            <Lottie options={defaultOptions} height={400} width={400} />
-            {/* <img
-              className="gif"
-              src="https://media.giphy.com/media/q1mHcB8wOCWf6/giphy.gif"
-              alt="Stressed Homer Simpson Cramming Homework"
-            ></img> */}
+            <Lottie options={defaultOptions1} height={400} width={450} />
+          </div>
+        </div>
+        <div className="features">
+          <div className="features-wrapper">
+            <div className="feature">
+              <Lottie
+                className="icon"
+                options={defaultOptions2}
+                height={120}
+                width={90}
+              />
+              <p className="title">Thorough Explanations</p>
+              <p className="subtitle">Thorough ExplanationsThorough ExplanationsThorough Explanations</p>
+            </div>
           </div>
         </div>
       </div>
