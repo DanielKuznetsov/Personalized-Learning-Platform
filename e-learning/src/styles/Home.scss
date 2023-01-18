@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,200;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700;1,6..72,800&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+
+.Home {
+  color: #36454f;
+  
+  &-wrapper {
+    .first-block {
+      margin-top: 10rem;
+      display: flex;
+      align-items: center;
+      gap: 12.5rem;
+      justify-content: center;
+
+      .content {
+        width: 42.5%;
+
+        .title {
+          font-family: "Newsreader", sans-serif;
+          font-size: 5rem;
+          font-weight: 600;
+
+          .highlight {
+            background-color: rgba(#e57700, 0.2);
+          }
+        }
+        .subtitle {
+          margin-top: 5rem;
+          font-size: 1.4rem;
+        }
+
+        .signup {
+          margin-top: 2rem;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          ion-icon {
+            font-size: 2rem;
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+
+          &-label {
+            display: flex;
+            align-items: center;
+            position: relative;
+          }
+
+          &-input {
+            outline: none;
+            border: 1px solid rgba(#36454f, 0.25);
+            font-size: 1.6rem;
+            padding: 0.85rem 1.65rem 0.85rem 4rem;
+            border-radius: 0.5rem;
+          }
+        }
+      }
+
+      .gif-hw {
+        .gif {
+          width: 60rem;
+          border-radius: 1rem;
+        }
+        .sub-text {
+        }
+      }
+    }
+  }
+}
