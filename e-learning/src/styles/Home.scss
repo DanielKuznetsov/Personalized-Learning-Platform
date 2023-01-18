@@ -162,6 +162,22 @@
       &-title {
         font-size: 6rem;
         font-weight: 600;
+
+        .tutoring {
+          background: -webkit-linear-gradient(left, #0deae3, #0d95ea);
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+          position: relative;
+
+          .overlay {
+            position: absolute;
+            text-shadow: 0 0 3px rgb(17, 24, 39);
+            -webkit-text-stroke: 3px rgb(17, 24, 39);
+            color: rgb(17, 24, 39);
+            left: 0;
+            z-index: -1;
+          }
+        }
       }
 
       &-subtitle {

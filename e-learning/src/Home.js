@@ -125,7 +125,13 @@ function Home() {
         </div>
 
         <div className="cta">
-          <p className="cta-title">Free Tutoring Help</p>
+          <p className="cta-title">
+            Free{" "}
+            <span className="tutoring">
+              Tutoring <span className="overlay">Tutoring </span>
+            </span>
+            Help
+          </p>
           <p className="cta-subtitle">
             Unsure of how to solve a proble or need some guidance? We've got you
             covered! Each and every one of our students gets assigned with a
