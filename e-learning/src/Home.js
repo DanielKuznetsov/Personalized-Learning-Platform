@@ -19,6 +19,24 @@ function Home() {
     },
   };
 
+  const topics = [
+    "Asymptotes",
+    "Continuity",
+    "Trig Derivatives",
+    "Average Rate of Change",
+    "Chain Rule",
+    "Related Rates",
+    "Optimization",
+    "Disc Method",
+    "L'Hopital's Rule",
+    "Power Rule",
+    "Washer Method",
+    "Trig Integrals",
+    "Area Between Two Curves",
+    "Mean Value Theorem",
+    "Fundamental Theorem of Calculus",
+  ];
+
   return (
     <div className="Home">
       <div className="Home-wrapper">
@@ -53,9 +71,27 @@ function Home() {
             <Lottie options={defaultOptions} height={400} width={450} />
           </div>
         </div>
+
+        <div className="tags">
+          <h2>Tags</h2>
+          <h3>Find content based on a topic</h3>
+          {/* MOVE INTO ITS OWN COMPONENT */}
+          <div className="tags-row">
+            {topics.map((topic, index) => (
+              <a
+                href="to-the-topic or signup"
+                key={index}
+                className="tags-single"
+              >
+                {topic}
+              </a>
+            ))}
+          </div>
+        </div>
+
         <div className="features">
           <div className="features-wrapper">
-            <div class="advantages">
+            <div className="advantages">
               <span>Our</span>
               <span>Advantages</span>
               <p>This is a list of notable features we've implemented.</p>

@@ -68,6 +68,63 @@
       }
     }
 
+    .tags {
+      margin: 5rem auto;
+      width: 70%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h2 {
+        font-size: 2.6rem;
+      }
+
+      h3 {
+        font-weight: 400;
+        margin-bottom: 2rem;
+      }
+
+      &-row {
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      &-single {
+        padding: 0.5rem 1rem;
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 0.75rem;
+        cursor: pointer;
+
+        background: hsla(26, 100%, 44%, 1);
+
+        background: linear-gradient(
+          45deg,
+          hsla(26, 100%, 44%, 1) 1%,
+          hsla(32, 100%, 45%, 1) 67%
+        );
+
+        background: -moz-linear-gradient(
+          45deg,
+          hsla(26, 100%, 44%, 1) 1%,
+          hsla(32, 100%, 45%, 1) 67%
+        );
+
+        background: -webkit-linear-gradient(
+          45deg,
+          hsla(26, 100%, 44%, 1) 1%,
+          hsla(32, 100%, 45%, 1) 67%
+        );
+      }
+    }
+
     .features {
       margin-top: 10rem;
 
@@ -78,8 +135,6 @@
         justify-content: center;
 
         .advantages {
-          //   background-color: yellowgreen;
-        //   padding-top: 3.5rem;
           width: 25rem;
           display: flex;
           flex-direction: column;
