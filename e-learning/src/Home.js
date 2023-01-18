@@ -5,6 +5,7 @@ import "./styles/Home.scss";
 import homework from "./images/homework.json";
 import solution from "./images/solution.json";
 import question from "./images/question.json";
+import practicing from "./images/practicing.json";
 import test from "./images/test.json";
 import Lottie from "react-lottie";
 import FeatureCard from "./FeatureCard";
@@ -14,6 +15,15 @@ function Home() {
     loop: true,
     autoplay: true,
     animationData: homework,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const defaultOptions2 = {
+    loop: true,
+    autoplay: true,
+    animationData: practicing,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -63,7 +73,7 @@ function Home() {
                 ></input>
               </label>
               <a href="to-signup">
-                <Button text="Start Practicing" />
+                <Button shadow text="Start Practicing" />
               </a>
             </div>
           </div>
@@ -112,6 +122,19 @@ function Home() {
               subtitle="Create custom tests, easily design and administer assessments tailored to your specific needs."
             />
           </div>
+        </div>
+
+        <div className="cta">
+          <p className="cta-title">CALL TO ACTION</p>
+          <p className="cta-subtitle">
+            text to support my claimtext to support my claimtext to support my
+            claimtext to support my claim text to support my claimtext to
+            support my claimtext to support my claimtext to support my claim
+          </p>
+          <div className="cta-gif">
+            <Lottie options={defaultOptions2} height={400} width={450} />
+          </div>
+          <Button shadow text="Start Practicing" />
         </div>
       </div>
     </div>
