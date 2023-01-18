@@ -17,7 +17,7 @@
           font-family: "Newsreader", sans-serif;
           font-size: 5rem;
           font-weight: 600;
-          font-family: 'Montserrat', sans-serif;
+          font-family: "Montserrat", sans-serif;
 
           .highlight {
             background-color: rgba(#e57700, 0.2);
@@ -78,7 +78,7 @@
       align-items: center;
 
       h2 {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-size: 2.6rem;
       }
 
@@ -142,7 +142,7 @@
           flex-direction: column;
 
           span {
-            font-family: 'Montserrat', sans-serif;
+            font-family: "Montserrat", sans-serif;
             font-size: 4.35rem;
             font-weight: 700;
           }
@@ -165,7 +165,7 @@
       &-title {
         font-size: 6rem;
         font-weight: 600;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
 
         .tutoring {
           background: -webkit-linear-gradient(left, #0deae3, #0d95ea);
@@ -187,6 +187,33 @@
         margin-top: 1rem;
         font-size: 1.8rem;
         padding: 0 7rem;
+      }
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 5rem;
+      padding: 0 2rem;
+
+      .feedback {
+        display: flex;
+        flex-direction: column;
+
+        .email {
+          text-decoration: none;
+          cursor: pointer;
+          background: -webkit-linear-gradient(
+            left,
+            hsla(26, 100%, 44%, 1),
+            hsla(32, 100%, 45%, 1)
+          );
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+          position: relative;
+        }
       }
     }
   }

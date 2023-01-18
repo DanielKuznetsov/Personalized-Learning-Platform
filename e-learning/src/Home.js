@@ -142,6 +142,16 @@ function Home() {
           </div>
           <Button shadow text="Start Practicing" />
         </div>
+
+        <div className="footer">
+          <span>All Rights Reserved © 2023</span>
+          <p className="feedback">
+            <span>Got feedback?</span>
+            <a href="mailto:info@theknown.io" className="email">
+              info@theknown.io
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   );
