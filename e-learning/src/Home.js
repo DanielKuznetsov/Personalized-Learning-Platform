@@ -7,29 +7,11 @@ import solution from "./images/solution.json";
 import question from "./images/question.json";
 import practicing from "./images/practicing.json";
 import test from "./images/test.json";
-import Lottie from "react-lottie";
 import FeatureCard from "./FeatureCard";
 import Footer from "./Footer";
+import LottieGif from "./LottieGif";
 
 function Home() {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: homework,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
-  const defaultOptions2 = {
-    loop: true,
-    autoplay: true,
-    animationData: practicing,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
   const topics = [
     "Asymptotes",
     "Continuity",
@@ -79,7 +61,8 @@ function Home() {
             </div>
           </div>
           <div className="gif-hw">
-            <Lottie options={defaultOptions} height={400} width={450} />
+            {/* <Lottie options={defaultOptions} height={400} width={450} /> */}
+            <LottieGif illustration={homework} width={450} height={400} />
           </div>
         </div>
 
@@ -139,7 +122,7 @@ function Home() {
             tutor to facilitate their learning.
           </p>
           <div className="cta-gif">
-            <Lottie options={defaultOptions2} height={400} width={550} />
+            <LottieGif illustration={practicing} width={550} height={400} />
           </div>
           <Button shadow text="Start Practicing" />
         </div>

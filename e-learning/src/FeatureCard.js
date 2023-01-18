@@ -1,29 +1,12 @@
 import "./styles/FeatureCard.scss";
-import Lottie from "react-lottie";
+import LottieGif from "./LottieGif";
 
-
-function FeatureCard({illustrationName, title, subtitle}) {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: illustrationName,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
+function FeatureCard({ illustrationName, title, subtitle }) {
   return (
     <div className="Feature">
-      <Lottie
-        className="icon"
-        options={defaultOptions}
-        height={120}
-        width={120}
-      />
+      <LottieGif illustration={illustrationName} height={120} width={120} />
       <p className="title">{title}</p>
-      <p className="subtitle">
-        {subtitle}
-      </p>
+      <p className="subtitle">{subtitle}</p>
     </div>
   );
 }
