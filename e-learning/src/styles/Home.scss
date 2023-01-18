@@ -2,17 +2,17 @@
 
 .Home {
   color: #36454f;
-  
+
   &-wrapper {
     .first-block {
-      margin-top: 10rem;
+      margin-top: 7rem;
       display: flex;
       align-items: center;
       gap: 12.5rem;
       justify-content: center;
 
       .content {
-        width: 42.5%;
+        width: 40.5%;
 
         .title {
           font-family: "Newsreader", sans-serif;
@@ -60,10 +60,11 @@
 
       .gif-hw {
         .gif {
-          width: 60rem;
+          width: 40rem;
           border-radius: 1rem;
         }
         .sub-text {
+          font-weight: 600;
         }
       }
     }

@@ -2,8 +2,19 @@ import React from "react";
 import Button from "./Button";
 import Navbar from "./Navbar";
 import "./styles/Home.scss";
+import homework from "./images/homework.json";
+import Lottie from "react-lottie";
 
 function Home() {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: homework,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <div className="Home">
       <div className="Home-wrapper">
@@ -35,14 +46,12 @@ function Home() {
             </div>
           </div>
           <div className="gif-hw">
-            <img
+            <Lottie options={defaultOptions} height={400} width={400} />
+            {/* <img
               className="gif"
               src="https://media.giphy.com/media/q1mHcB8wOCWf6/giphy.gif"
               alt="Stressed Homer Simpson Cramming Homework"
-            ></img>
-            <p className="sub-text">
-              We will help not to be like stressed like Homer Simpson!
-            </p>
+            ></img> */}
           </div>
         </div>
       </div>
