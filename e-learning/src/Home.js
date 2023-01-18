@@ -125,14 +125,14 @@ function Home() {
         </div>
 
         <div className="cta">
-          <p className="cta-title">CALL TO ACTION</p>
+          <p className="cta-title">Free Tutoring Help</p>
           <p className="cta-subtitle">
-            text to support my claimtext to support my claimtext to support my
-            claimtext to support my claim text to support my claimtext to
-            support my claimtext to support my claimtext to support my claim
+            Unsure of how to solve a proble or need some guidance? We've got you
+            covered! Each and every one of our students gets assigned with a
+            tutor to facilitate their learning.
           </p>
           <div className="cta-gif">
-            <Lottie options={defaultOptions2} height={400} width={450} />
+            <Lottie options={defaultOptions2} height={400} width={550} />
           </div>
           <Button shadow text="Start Practicing" />
         </div>

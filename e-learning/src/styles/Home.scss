@@ -152,7 +152,7 @@
     }
 
     .cta {
-      width: 65%;
+      width: 55%;
       margin: 10rem auto;
       display: flex;
       flex-direction: column;
@@ -160,8 +160,14 @@
       text-align: center;
 
       &-title {
-        font-size: 4rem;
+        font-size: 6rem;
         font-weight: 600;
+      }
+
+      &-subtitle {
+        margin-top: 1rem;
+        font-size: 1.8rem;
+        padding: 0 6.5rem;
       }
     }
   }
