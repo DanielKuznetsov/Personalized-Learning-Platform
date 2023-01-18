@@ -9,6 +9,7 @@ import practicing from "./images/practicing.json";
 import test from "./images/test.json";
 import Lottie from "react-lottie";
 import FeatureCard from "./FeatureCard";
+import Footer from "./Footer";
 
 function Home() {
   const defaultOptions = {
@@ -143,15 +144,7 @@ function Home() {
           <Button shadow text="Start Practicing" />
         </div>
 
-        <div className="footer">
-          <span>All Rights Reserved © 2023</span>
-          <p className="feedback">
-            <span>Got feedback?</span>
-            <a href="mailto:info@theknown.io" className="email">
-              info@theknown.io
-            </a>
-          </p>
-        </div>
+        <Footer />
       </div>
     </div>
   );

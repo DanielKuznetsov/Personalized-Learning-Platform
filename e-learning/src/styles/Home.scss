@@ -189,32 +189,5 @@
         padding: 0 7rem;
       }
     }
-
-    .footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      height: 5rem;
-      padding: 0 2rem;
-
-      .feedback {
-        display: flex;
-        flex-direction: column;
-
-        .email {
-          text-decoration: none;
-          cursor: pointer;
-          background: -webkit-linear-gradient(
-            left,
-            hsla(26, 100%, 44%, 1),
-            hsla(32, 100%, 45%, 1)
-          );
-          -webkit-text-fill-color: transparent;
-          -webkit-background-clip: text;
-          position: relative;
-        }
-      }
-    }
   }
 }
