@@ -8,6 +8,8 @@ import "./styles/App.scss";
 // import { useEffect } from "react";
 // import axios from "axios";
 import Home from "./Home";
+import { Routes, Route } from "react-router-dom";
+import AuthForm from "./AuthForm";
 
 function App() {
   // async function loginPets() {
@@ -47,7 +49,15 @@ function App() {
 
   return (
     <div className="App">
-      <Home />
+      <Routes>
+        <Route exact path="/" element={<Home />} /> {/* HOME */}
+        <Route exact path="/login" element={<AuthForm />} /> {/* LOGIN FORM */}
+        <Route exact path="/signup" element={<Home />} /> {/* SIGNUP FORM */}
+        <Route exact path="*" element={<Home />} />{" "}
+        {/* NOT FOUND PAGE OR PAGE IN CONSTRUCTION */}
+      </Routes>
+
+      {/* <Home /> */}
       {/* <Navbar /> */}
       {/* <button onClick={() => loginPets()}>Login</button>
       <button onClick={() => signout()}>Signout</button> */}
