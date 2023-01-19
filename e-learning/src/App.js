@@ -12,28 +12,6 @@ import { Routes, Route } from "react-router-dom";
 import AuthForm from "./AuthForm";
 
 function App() {
-  // async function loginPets() {
-  //   try {
-  //     await axios.post(
-  //       "http://localhost:4000/api/v1/pets/login",
-  //       {
-  //         email: "theo@example.com",
-  //         password: "teddytheo",
-  //       },
-  //       {
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //         withCredentials: true,
-  //       }
-  //     );
-
-  //     // console.log(JSON.parse(pets.request.response).token);
-  //   } catch (err) {
-  //     console.log(err.response.data);
-  //   }
-  // }
-
   // async function signout() {
   //   try {
   //     await axios.get("http://localhost:4000/api/v1/pets/logout", {
