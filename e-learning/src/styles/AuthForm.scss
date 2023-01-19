@@ -6,7 +6,6 @@
   padding: 3rem;
 
   &-form-wrapper {
-    // background-color: yellowgreen;
     flex: 6;
 
     display: flex;
@@ -37,11 +36,20 @@
         display: flex;
         gap: 2rem;
         flex-direction: column;
-        // background-color: yellow;
 
         &-label {
           font-size: 1.6rem;
           cursor: pointer;
+          position: relative;
+
+          ion-icon {
+            position: absolute;
+            font-size: 2.2rem;
+            top: 50%;
+            color: rgba(0, 0, 0, 0.35);
+            right: 1rem;
+            transform: translateY(0.5rem);
+          }
         }
 
         &-input {
@@ -50,7 +58,7 @@
           border-radius: 1rem;
           width: 100%;
           outline: rgba(16, 59, 229, 0.3);
-          padding: 1.25rem 2rem;
+          padding: 1.25rem 3.75rem 1.25rem 2rem;
           border: 2px solid rgba(0, 0, 0, 0.15);
           transition: all 0.2s ease-in-out;
 

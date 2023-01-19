@@ -2,9 +2,24 @@ import Button from "./Button";
 import Logo from "./Logo";
 import "./styles/AuthForm.scss";
 import signInSuccess from "./images/sign-in-success.json";
+import signupGif from "./images/signup.json";
 import LottieGif from "./LottieGif";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-function AuthForm() {
+function AuthForm({ login, signup }) {
+  const [gif, setGif] = useState();
+
+  useEffect(() => {
+    if (login) {
+      setGif(signInSuccess);
+    }
+
+    if (signup) {
+      setGif(signupGif);
+    }
+  }, [login, signup]);
+
   return (
     <div className="AuthForm">
       <div className="AuthForm-form-wrapper">
@@ -24,6 +39,7 @@ function AuthForm() {
                 name="email"
                 placeholder="example@gmail.com"
               />
+              <ion-icon name="at-outline"></ion-icon>
             </label>
             <label className="form-label" name="password">
               Password:
@@ -33,19 +49,21 @@ function AuthForm() {
                 name="password"
                 placeholder="Your password"
               />
+              <ion-icon name="lock-closed-outline"></ion-icon>
             </label>
             <Button submit fullWidth text="Login" />
           </form>
           <div className="no-account">
             <span className="no-account-text">Don't have an account yet? </span>
-            <a className="no-account-link" href="to-sign-up">
+            <Link to="/signup" className="no-account-link" href="to-sign-up">
               Sign Up
-            </a>
+            </Link>
           </div>
         </div>
       </div>
+
       <div className="AuthForm-illustration">
-        <LottieGif illustration={signInSuccess} width={500} height={500} />
+        <LottieGif illustration={gif} width={500} height={500} />
       </div>
     </div>
   );

@@ -50,10 +50,10 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route exact path="/" element={<Home />} /> {/* HOME */}
-        <Route exact path="/login" element={<AuthForm />} /> {/* LOGIN FORM */}
-        <Route exact path="/signup" element={<Home />} /> {/* SIGNUP FORM */}
-        <Route exact path="*" element={<Home />} />{" "}
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/login" element={<AuthForm login />} />
+        <Route exact path="/signup" element={<AuthForm signup />} />
+        <Route exact path="*" element={<Home />} />
         {/* NOT FOUND PAGE OR PAGE IN CONSTRUCTION */}
       </Routes>
 
