@@ -11,34 +11,11 @@ import axios from "axios";
 function AuthForm({ login, signup }) {
   const [gif, setGif] = useState();
   const [formData, setFormData] = useState({
+    name: "",
     email: "",
     password: "",
+    passwordConfirm: "",
   });
-
-  //   const handleChange = (event) => {
-  //     const { name, value } = event.target;
-  //     setFormData({ ...formData, [name]: value });
-  //   };
-
-  //   async function loginPets(email, password) {
-  //     try {
-  //       await axios.post(
-  //         "http://localhost:4000/api/v1/pets/login",
-  //         {
-  //           email,
-  //           password,
-  //         },
-  //         {
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //           },
-  //           withCredentials: true,
-  //         }
-  //       );
-  //     } catch (err) {
-  //       console.log(err.response.data);
-  //     }
-  //   }
 
   async function handleSubmitLogin(event) {
     event.preventDefault();
@@ -57,6 +34,13 @@ function AuthForm({ login, signup }) {
           withCredentials: true,
         }
       );
+
+      setFormData({
+        name: "",
+        email: "",
+        password: "",
+        passwordConfirm: "",
+      });
     } catch (err) {
       console.log(err.response.data);
     }
@@ -67,10 +51,12 @@ function AuthForm({ login, signup }) {
 
     try {
       await axios.post(
-        "http://localhost:4000/api/v1/pets/login",
+        "http://localhost:4000/api/v1/pets/signup",
         {
+          name: formData.name,
           email: formData.email,
           password: formData.password,
+          passwordConfirm: formData.passwordConfirm,
         },
         {
           headers: {
@@ -79,6 +65,13 @@ function AuthForm({ login, signup }) {
           withCredentials: true,
         }
       );
+
+      setFormData({
+        name: "",
+        email: "",
+        password: "",
+        passwordConfirm: "",
+      });
     } catch (err) {
       console.log(err.response.data);
     }
@@ -169,6 +162,13 @@ function AuthForm({ login, signup }) {
                   className="form-input"
                   type="text"
                   name="name"
+                  value={formData.name}
+                  onChange={(event) =>
+                    setFormData({
+                      ...formData,
+                      [event.target.name]: event.target.value,
+                    })
+                  }
                   placeholder="Daniel Kuznetsov"
                 />
                 <ion-icon name="person-outline"></ion-icon>
@@ -179,6 +179,13 @@ function AuthForm({ login, signup }) {
                   className="form-input"
                   type="text"
                   name="email"
+                  value={formData.email}
+                  onChange={(event) =>
+                    setFormData({
+                      ...formData,
+                      [event.target.name]: event.target.value,
+                    })
+                  }
                   placeholder="example@gmail.com"
                 />
                 <ion-icon name="at-outline"></ion-icon>
@@ -189,7 +196,14 @@ function AuthForm({ login, signup }) {
                   className="form-input"
                   type="password"
                   name="password"
-                  placeholder="Your password"
+                  value={formData.password}
+                  onChange={(event) =>
+                    setFormData({
+                      ...formData,
+                      [event.target.name]: event.target.value,
+                    })
+                  }
+                  placeholder="Enter password"
                 />
                 <ion-icon name="lock-closed-outline"></ion-icon>
               </label>
@@ -198,12 +212,19 @@ function AuthForm({ login, signup }) {
                 <input
                   className="form-input"
                   type="password"
-                  name="password"
-                  placeholder="Your password"
+                  name="passwordConfirm"
+                  value={formData.passwordConfirm}
+                  onChange={(event) =>
+                    setFormData({
+                      ...formData,
+                      [event.target.name]: event.target.value,
+                    })
+                  }
+                  placeholder="Confirm password"
                 />
                 <ion-icon name="lock-closed-outline"></ion-icon>
               </label>
-              <Button submit fullWidth text="Login" />
+              <Button submit fullWidth text="Signup" />
             </form>
             <div className="no-account">
               <span className="no-account-text">Already have an account? </span>
