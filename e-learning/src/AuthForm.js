@@ -5,10 +5,11 @@ import signInSuccess from "./images/sign-in-success.json";
 import signupGif from "./images/signup.json";
 import LottieGif from "./LottieGif";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function AuthForm({ login, signup }) {
+function AuthForm({ login, signup, setJwt, encryptData }) {
+  const navigate = useNavigate();
   const [gif, setGif] = useState();
   const [formData, setFormData] = useState({
     name: "",
@@ -21,7 +22,7 @@ function AuthForm({ login, signup }) {
     event.preventDefault();
 
     try {
-      await axios.post(
+      const data = await axios.post(
         "http://localhost:4000/api/v1/pets/login",
         {
           email: formData.email,
@@ -35,6 +36,12 @@ function AuthForm({ login, signup }) {
         }
       );
 
+      //   const encryptedToken = await bcrypt.hash(this.password, 12);
+      localStorage.setItem("jwt", data.data.token);
+      //   localStorage.setItem("clone", encryptedToken);
+      encryptData(data.data.token);
+      navigate("/");
+      window.location.reload();
       setFormData({
         name: "",
         email: "",
@@ -50,7 +57,7 @@ function AuthForm({ login, signup }) {
     event.preventDefault();
 
     try {
-      await axios.post(
+      const data = await axios.post(
         "http://localhost:4000/api/v1/pets/signup",
         {
           name: formData.name,
@@ -66,6 +73,11 @@ function AuthForm({ login, signup }) {
         }
       );
 
+      let token = { value: data.data.token, timestamp: new Date() };
+      let itemJSON = JSON.stringify(token);
+      localStorage.setItem("jwt", data.data.token);
+      setJwt(token.value);
+      navigate("/");
       setFormData({
         name: "",
         email: "",
