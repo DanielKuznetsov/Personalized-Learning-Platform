@@ -10,8 +10,13 @@ import test from "./images/test.json";
 import FeatureCard from "./FeatureCard";
 import Footer from "./Footer";
 import LottieGif from "./LottieGif";
+import { Navigate } from "react-router-dom";
 
-function Home() {
+function Home({ isLogged }) {
+  if (isLogged) {
+    return <Navigate to="/dashboard" replace />;
+  }
+
   const topics = [
     "Asymptotes",
     "Continuity",

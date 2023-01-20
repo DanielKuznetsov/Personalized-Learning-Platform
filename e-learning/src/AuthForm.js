@@ -40,7 +40,7 @@ function AuthForm({ login, signup, encryptData }) {
       localStorage.setItem("jwt", data.data.token);
       encryptData(data.data.token);
       navigate("/");
-      window.location.reload();
+    //   window.location.reload();
       setFormData({
         name: "",
         email: "",

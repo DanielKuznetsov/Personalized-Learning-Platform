@@ -72,11 +72,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route
-          exact
-          path="/"
-          element={isLogged ? <Navbar loggedIn /> : <Home />}
-        />
+        <Route exact path="/" element={<Home isLogged={isLogged} />} />
         <Route
           exact
           path="/login"
@@ -99,6 +95,7 @@ function App() {
             />
           }
         />
+        <Route exact path="/dashboard" element={<Navbar loggedIn />} />
         <Route exact path="*" element={<Home />} />
         {/* NOT FOUND PAGE OR PAGE IN CONSTRUCTION */}
       </Routes>
