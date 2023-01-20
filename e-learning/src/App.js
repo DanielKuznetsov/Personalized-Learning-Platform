@@ -44,14 +44,17 @@ function App() {
     if (isLogged) {
       async function getUser() {
         try {
-          const user = await axios.get("http://localhost:4000/api/v1/pets/me", {
-            headers: {
-              "Content-Type": "application/json",
-            },
-            withCredentials: true,
-          });
+          const user = await axios.get(
+            `http://localhost:4000/api/v1/pets/${localStorage.getItem("id")}`,
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+              withCredentials: true,
+            }
+          );
 
-          setUserData(user.data.data.pet);
+          setUserData(user.data.data.pet[0]);
         } catch (err) {
           console.log(err.response.data);
         }

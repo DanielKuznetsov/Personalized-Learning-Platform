@@ -36,9 +36,10 @@ function AuthForm({ login, signup, encryptData, setUserData }) {
         }
       );
 
+      localStorage.setItem("id", data.data.data.pet._id);
       localStorage.setItem("jwt", data.data.token);
       encryptData(data.data.token);
-      navigate("/dashboard");
+      navigate("/");
       window.location.reload();
       setFormData({
         name: "",
