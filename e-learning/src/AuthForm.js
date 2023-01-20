@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function AuthForm({ login, signup, setJwt, encryptData }) {
+function AuthForm({ login, signup, encryptData, setUserData }) {
   const navigate = useNavigate();
   const [gif, setGif] = useState();
   const [formData, setFormData] = useState({
@@ -36,11 +36,9 @@ function AuthForm({ login, signup, setJwt, encryptData }) {
         }
       );
 
-      console.log(data)
-
       localStorage.setItem("jwt", data.data.token);
       encryptData(data.data.token);
-      navigate("/");
+      navigate("/dashboard");
       window.location.reload();
       setFormData({
         name: "",
@@ -73,12 +71,11 @@ function AuthForm({ login, signup, setJwt, encryptData }) {
         }
       );
 
-    //   console.log(data.data.data.pet)
-    
+      setUserData(data.data.data.pet);
       localStorage.setItem("jwt", data.data.token);
       encryptData(data.data.token);
       navigate("/");
-    //   window.location.reload();
+      window.location.reload();
       setFormData({
         name: "",
         email: "",

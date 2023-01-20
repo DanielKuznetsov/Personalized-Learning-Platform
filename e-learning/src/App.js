@@ -11,11 +11,13 @@ import { Routes, Route } from "react-router-dom";
 import AuthForm from "./AuthForm";
 import { useEffect, useState } from "react";
 import CryptoJS from "crypto-js";
+import axios from "axios";
 
 function App() {
   const [jwt, setJwt] = useState(localStorage.getItem("cloneEncrypt") || false);
   const [decreptedData, setDecreptedData] = useState("");
   const [isLogged, setIsLogged] = useState(false);
+  const [userData, setUserData] = useState(null);
 
   const secretPass = "XkhZG4fW2t2W";
 
@@ -38,7 +40,26 @@ function App() {
       setDecreptedData(data);
       setIsLogged(decreptedData === localStorage.getItem("jwt"));
     }
-  }, [jwt, decreptedData]);
+
+    if (isLogged) {
+      async function getUser() {
+        try {
+          const user = await axios.get("http://localhost:4000/api/v1/pets/me", {
+            headers: {
+              "Content-Type": "application/json",
+            },
+            withCredentials: true,
+          });
+
+          setUserData(user.data.data.pet);
+        } catch (err) {
+          console.log(err.response.data);
+        }
+      }
+
+      getUser();
+    }
+  }, [jwt, decreptedData, isLogged]);
 
   return (
     <div className="App">
@@ -51,12 +72,24 @@ function App() {
         <Route
           exact
           path="/login"
-          element={<AuthForm encryptData={encryptData} login />}
+          element={
+            <AuthForm
+              setUserData={setUserData}
+              encryptData={encryptData}
+              login
+            />
+          }
         />
         <Route
           exact
           path="/signup"
-          element={<AuthForm encryptData={encryptData} signup />}
+          element={
+            <AuthForm
+              setUserData={setUserData}
+              encryptData={encryptData}
+              signup
+            />
+          }
         />
         <Route exact path="*" element={<Home />} />
         {/* NOT FOUND PAGE OR PAGE IN CONSTRUCTION */}
