@@ -13,12 +13,9 @@ router.get("/logout", authController.logout);
 router.post("/forgotPassword", authController.forgotPassword);
 router.patch("/resetPassword/:token", authController.resetPassword);
 
+router.get("/:id", petController.getPet);
+
 router.use(authController.protect);
-router.get(
-  "/me",
-  authController.protect,
-  petController.getPet
-);
 
 router.patch(
   "/updateMyPassword",

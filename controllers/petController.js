@@ -66,12 +66,12 @@ exports.getMe = (req, res, next) => {
 };
 
 exports.getPet = catchAsync(async (req, res, next) => {
-  // const pet = await Pet.find({ _id: req.id });
+  const pet = await Pet.find({ _id: req.params.id });
 
   res.status(200).json({
     status: "success",
     data: {
-      pet: req.pet,
+      pet,
     },
   });
 });
