@@ -53,7 +53,11 @@ function App() {
           path="/login"
           element={<AuthForm encryptData={encryptData} login />}
         />
-        <Route exact path="/signup" element={<AuthForm signup />} />
+        <Route
+          exact
+          path="/signup"
+          element={<AuthForm encryptData={encryptData} signup />}
+        />
         <Route exact path="*" element={<Home />} />
         {/* NOT FOUND PAGE OR PAGE IN CONSTRUCTION */}
       </Routes>

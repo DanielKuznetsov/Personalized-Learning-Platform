@@ -36,9 +36,9 @@ function AuthForm({ login, signup, setJwt, encryptData }) {
         }
       );
 
-      //   const encryptedToken = await bcrypt.hash(this.password, 12);
+      console.log(data)
+
       localStorage.setItem("jwt", data.data.token);
-      //   localStorage.setItem("clone", encryptedToken);
       encryptData(data.data.token);
       navigate("/");
       window.location.reload();
@@ -73,11 +73,12 @@ function AuthForm({ login, signup, setJwt, encryptData }) {
         }
       );
 
-      let token = { value: data.data.token, timestamp: new Date() };
-      let itemJSON = JSON.stringify(token);
+    //   console.log(data.data.data.pet)
+    
       localStorage.setItem("jwt", data.data.token);
-      setJwt(token.value);
+      encryptData(data.data.token);
       navigate("/");
+    //   window.location.reload();
       setFormData({
         name: "",
         email: "",
