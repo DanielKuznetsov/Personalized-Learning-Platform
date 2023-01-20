@@ -16,9 +16,10 @@ import axios from "axios";
 function App() {
   const [jwt, setJwt] = useState(localStorage.getItem("cloneEncrypt") || false);
   const [decreptedData, setDecreptedData] = useState("");
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(
+    localStorage.getItem("isLogged") || false
+  );
   const [userData, setUserData] = useState(null);
-  const [isTempered, setIsTempered] = useState(false);
   const navigate = useNavigate();
 
   const secretPass = "XkhZG4fW2t2W";
@@ -40,7 +41,11 @@ function App() {
       );
       const data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
       setDecreptedData(data);
-      setIsLogged(decreptedData === localStorage.getItem("jwt"));
+      // setIsLogged(decreptedData === localStorage.getItem("jwt"));
+      localStorage.setItem(
+        "isLogged",
+        decreptedData === localStorage.getItem("jwt")
+      );
     }
 
     if (isLogged) {
@@ -59,8 +64,8 @@ function App() {
           console.log(user.data.data);
           setUserData(user.data.data.pet[0]);
         } catch (err) {
-          console.log(err.response.data);
-          setIsTempered(true);
+          console.log(err.message);
+          setIsLogged(false);
           navigate("/login");
         }
       }
@@ -80,6 +85,7 @@ function App() {
             <AuthForm
               setUserData={setUserData}
               encryptData={encryptData}
+              isLogged={isLogged}
               login
             />
           }
@@ -95,7 +101,11 @@ function App() {
             />
           }
         />
-        <Route exact path="/dashboard" element={<Concept isLogged={isLogged} />} />
+        <Route
+          exact
+          path="/dashboard"
+          element={<Concept isLogged={isLogged} />}
+        />
         <Route exact path="*" element={<Home />} />
         {/* NOT FOUND PAGE OR PAGE IN CONSTRUCTION */}
       </Routes>

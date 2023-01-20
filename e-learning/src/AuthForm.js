@@ -10,6 +10,7 @@ import axios from "axios";
 
 function AuthForm({ login, signup, encryptData }) {
   const navigate = useNavigate();
+
   const [gif, setGif] = useState();
   const [formData, setFormData] = useState({
     name: "",
@@ -17,6 +18,17 @@ function AuthForm({ login, signup, encryptData }) {
     password: "",
     passwordConfirm: "",
   });
+
+  useEffect(() => {
+    // Renderring an animation
+    if (login) {
+      setGif(signInSuccess);
+    }
+
+    if (signup) {
+      setGif(signupGif);
+    }
+  }, [login, signup]);
 
   async function handleSubmitLogin(event) {
     event.preventDefault();
@@ -40,7 +52,7 @@ function AuthForm({ login, signup, encryptData }) {
       localStorage.setItem("jwt", data.data.token);
       encryptData(data.data.token);
       navigate("/");
-    //   window.location.reload();
+      window.location.reload();
       setFormData({
         name: "",
         email: "",
@@ -49,7 +61,6 @@ function AuthForm({ login, signup, encryptData }) {
       });
     } catch (err) {
       console.log(err.response.data);
-      
     }
   }
 
@@ -77,7 +88,7 @@ function AuthForm({ login, signup, encryptData }) {
       localStorage.setItem("jwt", data.data.token);
       encryptData(data.data.token);
       navigate("/");
-      window.location.reload();
+      //   window.location.reload();
       setFormData({
         name: "",
         email: "",
@@ -88,17 +99,6 @@ function AuthForm({ login, signup, encryptData }) {
       console.log(err.response.data);
     }
   }
-
-  useEffect(() => {
-    // Renderring an animation
-    if (login) {
-      setGif(signInSuccess);
-    }
-
-    if (signup) {
-      setGif(signupGif);
-    }
-  }, [login, signup]);
 
   return (
     <div className="AuthForm">
