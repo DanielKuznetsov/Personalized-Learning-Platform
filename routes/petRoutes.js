@@ -14,7 +14,11 @@ router.post("/forgotPassword", authController.forgotPassword);
 router.patch("/resetPassword/:token", authController.resetPassword);
 
 router.use(authController.protect);
-
+router.get(
+  "/me",
+  authController.protect,
+  petController.getPet
+);
 
 router.patch(
   "/updateMyPassword",
@@ -22,12 +26,6 @@ router.patch(
   authController.updatePassword
 );
 
-router.get(
-  "/me",
-  authController.protect,
-  petController.getMe,
-  petController.getPet
-);
 router.patch("/updateMe", authController.protect, petController.updateMe);
 router.patch("/deleteMe", authController.protect, petController.deleteMe);
 

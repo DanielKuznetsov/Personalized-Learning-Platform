@@ -144,9 +144,13 @@ exports.isLoggedIn = async (req, res, next) => {
       // THERE IS A LOGGED IN USER
       res.locals.user = freshUser; // this will allow that each PUG template will have access to this variable
       req.user = freshUser;
-      return next();
+      console.log("true");
+      return true;
     } catch (err) {
-      return next();
+      console.log("false");
+      // res.status(200).json({
+      //   status: "fail",
+      // });
     }
   }
 

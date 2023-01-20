@@ -10,7 +10,6 @@ const cookieParser = require("cookie-parser");
 const AppError = require("./utils/appError.js");
 const globalErrorHandler = require("./controllers/errorController.js");
 const petRouter = require("./routes/petRoutes.js");
-// const requestRouter = require("./routes/requestRoutes.js");
 
 const app = express();
 
@@ -21,11 +20,8 @@ app.use(
   })
 );
 
-app.options('*', function(req, res) {
-  res.header('Access-Control-Allow-Origin', '*');
-  // res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  // res.header('Access-Control-Allow-Headers', 'Content-Type');
-  // res.send(200);
+app.options("*", function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
 });
 
 // Set security HTTP headers
@@ -33,7 +29,11 @@ app.use(helmet());
 
 // Middleware for POST methods to work
 app.use(morgan("dev"));
-// app.use(express.static(`${__dirname}/whatever the folder's name is where the static files are`))
+// app.use(
+//   express.static(
+//     `${__dirname} /whatever the folder's name is where the static files are`
+//   )
+// );
 
 // Limit requests from same API
 const limiter = rateLimit({
@@ -61,7 +61,6 @@ app.use((req, res, next) => {
 
 // Routes
 app.use("/api/v1/pets", petRouter);
-// app.use("/api/v1/requests", requestRouter);
 
 app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));

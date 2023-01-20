@@ -66,12 +66,19 @@ exports.getMe = (req, res, next) => {
 };
 
 exports.getPet = catchAsync(async (req, res, next) => {
-  const pet = await Pet.find({ _id: req.params.id });
+  // const pet = await Pet.find({ _id: req.id });
 
   res.status(200).json({
     status: "success",
     data: {
-      pet,
+      pet: req.pet,
     },
   });
 });
+
+exports.proceed = (req, res, next) => {
+  res.status(200).json({
+    status: "success",
+    isLoggedIn: "true",
+  });
+};
