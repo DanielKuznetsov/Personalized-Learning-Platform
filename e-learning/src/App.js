@@ -7,7 +7,7 @@ import Sidebar from "./Sidebar";
 // import Problem from "./Problem";
 // import { useEffect } from "react";
 import Home from "./Home";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import AuthForm from "./AuthForm";
 import { useEffect, useState } from "react";
 import CryptoJS from "crypto-js";
@@ -18,6 +18,8 @@ function App() {
   const [decreptedData, setDecreptedData] = useState("");
   const [isLogged, setIsLogged] = useState(false);
   const [userData, setUserData] = useState(null);
+  const [isTempered, setIsTempered] = useState(false);
+  const navigate = useNavigate();
 
   const secretPass = "XkhZG4fW2t2W";
 
@@ -54,16 +56,18 @@ function App() {
             }
           );
 
-          console.log(user.data.data)
+          console.log(user.data.data);
           setUserData(user.data.data.pet[0]);
         } catch (err) {
           console.log(err.response.data);
+          setIsTempered(true);
+          navigate("/login");
         }
       }
 
       getUser();
     }
-  }, [jwt, decreptedData, isLogged]);
+  }, [jwt, decreptedData, isLogged, navigate]);
 
   return (
     <div className="App">

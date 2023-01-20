@@ -49,6 +49,7 @@ function AuthForm({ login, signup, encryptData }) {
       });
     } catch (err) {
       console.log(err.response.data);
+      
     }
   }
 
