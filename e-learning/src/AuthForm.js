@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function AuthForm({ login, signup, encryptData, setUserData }) {
+function AuthForm({ login, signup, encryptData }) {
   const navigate = useNavigate();
   const [gif, setGif] = useState();
   const [formData, setFormData] = useState({
@@ -72,7 +72,7 @@ function AuthForm({ login, signup, encryptData, setUserData }) {
         }
       );
 
-      setUserData(data.data.data.pet);
+      localStorage.setItem("id", data.data.data.pet._id);
       localStorage.setItem("jwt", data.data.token);
       encryptData(data.data.token);
       navigate("/");

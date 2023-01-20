@@ -66,6 +66,7 @@ exports.getMe = (req, res, next) => {
 };
 
 exports.getPet = catchAsync(async (req, res, next) => {
+  console.log(req.params)
   const pet = await Pet.find({ _id: req.params.id });
 
   res.status(200).json({

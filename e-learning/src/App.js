@@ -54,6 +54,7 @@ function App() {
             }
           );
 
+          console.log(user.data.data)
           setUserData(user.data.data.pet[0]);
         } catch (err) {
           console.log(err.response.data);
