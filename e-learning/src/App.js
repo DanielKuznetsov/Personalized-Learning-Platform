@@ -95,7 +95,7 @@ function App() {
             />
           }
         />
-        <Route exact path="/dashboard" element={<Navbar loggedIn />} />
+        <Route exact path="/dashboard" element={<Concept isLogged={isLogged} />} />
         <Route exact path="*" element={<Home />} />
         {/* NOT FOUND PAGE OR PAGE IN CONSTRUCTION */}
       </Routes>
