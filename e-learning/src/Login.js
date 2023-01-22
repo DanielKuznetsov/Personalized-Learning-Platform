@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { login, reset } from "./features/auth/authSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Spinner from "./Spinner";
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -87,6 +88,10 @@ function Login() {
       password: false,
     });
   };
+
+  if (isLoading) {
+    return <Spinner />
+  }
 
   return (
     <div className="AuthForm">

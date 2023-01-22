@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { signup, reset } from "./features/auth/authSlice";
 import { toast } from "react-toastify";
+import Spinner from "./Spinner";
 
 function Signup() {
   const [formData, setFormData] = useState({
@@ -114,6 +115,10 @@ function Signup() {
     }
   };
 
+  if (isLoading) {
+    return <Spinner />
+  }
+
   return (
     <div className="AuthForm">
       <div className="AuthForm-form-wrapper">
@@ -188,7 +193,9 @@ function Signup() {
               Confirm Password:
               <input
                 className={
-                  errorFields.passwordConfirm ? "form-input error" : "form-input"
+                  errorFields.passwordConfirm
+                    ? "form-input error"
+                    : "form-input"
                 }
                 type="password"
                 name="passwordConfirm"

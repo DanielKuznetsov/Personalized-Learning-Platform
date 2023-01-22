@@ -22,7 +22,7 @@ function Navbar() {
   const handleLogout = () => {
     dispatch(logout());
     dispatch(reset());
-    
+
     toast.success("Successfully Logged Out!");
     navigate("/");
   };
