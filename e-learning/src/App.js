@@ -4,6 +4,7 @@ import Home from "./Home";
 import "./styles/App.scss";
 import Login from "./Login";
 import Navbar from "./Navbar";
+import { ToastContainer, toast } from "react-toastify";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/dashboard" element={<Navbar />} />
         </Routes>
       </div>
+      <ToastContainer />
     </>
   );
 }

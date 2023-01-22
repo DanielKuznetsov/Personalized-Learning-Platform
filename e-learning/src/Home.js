@@ -12,6 +12,7 @@ import Footer from "./Footer";
 import LottieGif from "./LottieGif";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
 
 function Home() {
   const navigate = useNavigate();

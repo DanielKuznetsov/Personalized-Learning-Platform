@@ -42,6 +42,10 @@
           cursor: pointer;
           position: relative;
 
+          .error {
+            border: 2px solid rgba(212, 7, 7, 0.45);
+          }
+
           ion-icon {
             position: absolute;
             font-size: 2.2rem;
@@ -57,10 +61,15 @@
           margin-top: 1rem;
           border-radius: 1rem;
           width: 100%;
+          color: rgba(0, 0, 0, .9);
           outline: rgba(16, 59, 229, 0.3);
           padding: 1.25rem 3.75rem 1.25rem 2rem;
           border: 2px solid rgba(0, 0, 0, 0.15);
           transition: all 0.2s ease-in-out;
+
+          &::placeholder {
+            color: rgba(0, 0, 0, 0.35);
+          }
 
           &:active,
           &:focus {
@@ -102,4 +111,10 @@
     align-items: center;
     justify-content: center;
   }
+}
+
+.error {
+  font-size: 1.2rem;
+  color: rgba(212, 7, 7, 0.75);
+  margin-top: -1.25rem;
 }

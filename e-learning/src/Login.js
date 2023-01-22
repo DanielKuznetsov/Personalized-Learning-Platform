@@ -6,13 +6,18 @@ import signInSuccess from "./images/sign-in-success.json";
 import { Link, useNavigate } from "react-router-dom";
 import LottieGif from "./LottieGif";
 import { useSelector, useDispatch } from "react-redux";
-import { toast } from "react-toastify";
 import { login, reset } from "./features/auth/authSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
+  });
+  const [errorFields, setErrorFields] = useState({
+    email: false,
+    password: false,
   });
 
   const { email, password } = formData;
@@ -26,16 +31,18 @@ function Login() {
 
   useEffect(() => {
     if (isError) {
-      toast.error("Error from Login");
+      toast.error(message);
     }
 
-    if (isSuccess || student) {
+    if (student) {
       navigate("/dashboard");
       toast.success("Logged-in successfully!");
+
+      console.log(student);
     }
 
     dispatch(reset());
-  }, [isSuccess, isError, dispatch, navigate, student]);
+  }, [isError, dispatch, navigate, student, message]);
 
   const handleOnChange = (e) => {
     setFormData((prevState) => ({
@@ -47,12 +54,40 @@ function Login() {
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
+    if (!email && !password) {
+      setErrorFields({
+        email: true,
+        password: true,
+      });
+      return toast.error("Fill out both fields!");
+    } else if (!email) {
+      setErrorFields({
+        email: true,
+        password: false,
+      });
+      return toast.error("Email field is empty!");
+    } else if (!password) {
+      setErrorFields({
+        email: false,
+        password: true,
+      });
+      return toast.error("Password field is empty!");
+    }
+
     const studentData = {
       email,
       password,
     };
 
     dispatch(login(studentData));
+    setFormData({
+      email: "",
+      password: "",
+    });
+    setErrorFields({
+      email: false,
+      password: false,
+    });
   };
 
   return (
@@ -69,7 +104,9 @@ function Login() {
             <label className="form-label" name="email">
               Email:
               <input
-                className="form-input"
+                className={
+                  errorFields.email ? "form-input error" : "form-input"
+                }
                 type="text"
                 name="email"
                 value={email}
@@ -78,10 +115,18 @@ function Login() {
               />
               <ion-icon name="at-outline"></ion-icon>
             </label>
+            {errorFields.email ? (
+              <span className="error">Email field is empty *</span>
+            ) : (
+              ""
+            )}
+
             <label className="form-label" name="password">
               Password:
               <input
-                className="form-input"
+                className={
+                  errorFields.password ? "form-input error" : "form-input"
+                }
                 type="password"
                 name="password"
                 value={password}
@@ -90,6 +135,12 @@ function Login() {
               />
               <ion-icon name="lock-closed-outline"></ion-icon>
             </label>
+            {errorFields.password ? (
+              <span className="error">Password field is empty *</span>
+            ) : (
+              ""
+            )}
+
             <Button submit fullWidth text="Login" />
           </form>
 
