@@ -3,8 +3,11 @@ import Logo from "./Logo";
 import Button from "./Button";
 import { useState, useEffect } from "react";
 import signInSuccess from "./images/sign-in-success.json";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LottieGif from "./LottieGif";
+import { useSelector, useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import { login, reset } from "./features/auth/authSlice";
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -14,7 +17,43 @@ function Login() {
 
   const { email, password } = formData;
 
-  const handleOnChange = (e) => {};
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { student, isSuccess, isError, isLoading, message } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (isError) {
+      toast.error("Error from Login");
+    }
+
+    if (isSuccess || student) {
+      navigate("/");
+      toast.success("Logged-in successfully!");
+    }
+
+    dispatch(reset());
+  }, [isSuccess, isError, dispatch, navigate, student]);
+
+  const handleOnChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+
+    const studentData = {
+      email,
+      password,
+    };
+
+    dispatch(login(studentData));
+  };
 
   return (
     <div className="AuthForm">
@@ -26,7 +65,7 @@ function Login() {
             Happy to see you back. Consistency is the key! Login to your account
             to view today's challenge.
           </p>
-          <form className="form">
+          <form onSubmit={handleOnSubmit} className="form">
             <label className="form-label" name="email">
               Email:
               <input
