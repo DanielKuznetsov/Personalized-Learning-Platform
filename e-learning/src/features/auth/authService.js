@@ -13,8 +13,20 @@ const signup = async (studentData) => {
   return response.data;
 };
 
+// Login a student
+const login = async (studentData) => {
+  const response = await axios.post(API_URL + "login", studentData);
+
+  if (response.data) {
+    localStorage.setItem("student", JSON.stringify(response.data));
+  }
+
+  return response.data;
+};
+
 const authService = {
   signup,
+  login,
 };
 
 export default authService;
