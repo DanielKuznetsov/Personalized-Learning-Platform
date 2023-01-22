@@ -72,9 +72,10 @@ exports.loginStudent = asyncHandler(async (req, res) => {
   }
 });
 
+// Get student data /api/students/me Private
 exports.getMe = (req, res) => {
   res.status(200).json({
-    message: "Student's data route",
+    student: req.student,
   });
 };
 
