@@ -30,75 +30,75 @@ function AuthForm({ login, signup, encryptData }) {
     }
   }, [login, signup]);
 
-  async function handleSubmitLogin(event) {
-    event.preventDefault();
+  // async function handleSubmitLogin(event) {
+  //   event.preventDefault();
 
-    try {
-      const data = await axios.post(
-        "http://localhost:4000/api/v1/pets/login",
-        {
-          email: formData.email,
-          password: formData.password,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
-      );
+  //   try {
+  //     const data = await axios.post(
+  //       "http://localhost:4000/api/v1/pets/login",
+  //       {
+  //         email: formData.email,
+  //         password: formData.password,
+  //       },
+  //       {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         withCredentials: true,
+  //       }
+  //     );
 
-      localStorage.setItem("id", data.data.data.pet._id);
-      localStorage.setItem("jwt", data.data.token);
-      encryptData(data.data.token);
-      navigate("/");
-      window.location.reload();
-      setFormData({
-        name: "",
-        email: "",
-        password: "",
-        passwordConfirm: "",
-      });
-    } catch (err) {
-      console.log(err.response.data);
-    }
-  }
+  //     localStorage.setItem("id", data.data.data.pet._id);
+  //     localStorage.setItem("jwt", data.data.token);
+  //     encryptData(data.data.token);
+  //     navigate("/");
+  //     window.location.reload();
+  //     setFormData({
+  //       name: "",
+  //       email: "",
+  //       password: "",
+  //       passwordConfirm: "",
+  //     });
+  //   } catch (err) {
+  //     console.log(err.response.data);
+  //   }
+  // }
 
-  async function handleSubmitSignup(event) {
-    event.preventDefault();
+  // async function handleSubmitSignup(event) {
+  //   event.preventDefault();
 
-    try {
-      const data = await axios.post(
-        "http://localhost:4000/api/v1/pets/signup",
-        {
-          name: formData.name,
-          email: formData.email,
-          password: formData.password,
-          passwordConfirm: formData.passwordConfirm,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
-      );
+  //   try {
+  //     const data = await axios.post(
+  //       "http://localhost:4000/api/v1/pets/signup",
+  //       {
+  //         name: formData.name,
+  //         email: formData.email,
+  //         password: formData.password,
+  //         passwordConfirm: formData.passwordConfirm,
+  //       },
+  //       {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         withCredentials: true,
+  //       }
+  //     );
 
-      localStorage.setItem("id", data.data.data.pet._id);
-      localStorage.setItem("jwt", data.data.token);
-      encryptData(data.data.token);
-      navigate("/");
-      //   window.location.reload();
-      setFormData({
-        name: "",
-        email: "",
-        password: "",
-        passwordConfirm: "",
-      });
-    } catch (err) {
-      console.log(err.response.data);
-    }
-  }
+  //     localStorage.setItem("id", data.data.data.pet._id);
+  //     localStorage.setItem("jwt", data.data.token);
+  //     encryptData(data.data.token);
+  //     navigate("/");
+  //     //   window.location.reload();
+  //     setFormData({
+  //       name: "",
+  //       email: "",
+  //       password: "",
+  //       passwordConfirm: "",
+  //     });
+  //   } catch (err) {
+  //     console.log(err.response.data);
+  //   }
+  // }
 
   return (
     <div className="AuthForm">
@@ -111,7 +111,8 @@ function AuthForm({ login, signup, encryptData }) {
               Happy to see you back. Consistency is the key! Login to your
               account to view today's challenge.
             </p>
-            <form onSubmit={handleSubmitLogin} className="form">
+            {/* <form onSubmit={handleSubmitLogin} className="form"> */}
+            <form className="form">
               <label className="form-label" name="email">
                 Email:
                 <input
@@ -167,7 +168,8 @@ function AuthForm({ login, signup, encryptData }) {
               Join the community of learners and discover new opportunities for
               growth and development.
             </p>
-            <form onSubmit={handleSubmitSignup} className="form">
+            {/* <form onSubmit={handleSubmitSignup} className="form"> */}
+            <form  className="form">
               <label className="form-label" name="name">
                 Full Name:
                 <input

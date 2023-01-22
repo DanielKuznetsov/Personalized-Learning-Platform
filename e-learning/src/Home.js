@@ -13,13 +13,13 @@ import LottieGif from "./LottieGif";
 import { Navigate } from "react-router-dom";
 
 function Home({ isLogged }) {
-  useEffect(() => {
-    window.location.reload();
-  }, [isLogged]);
+  // useEffect(() => {
+  //   window.location.reload();
+  // }, [isLogged]);
 
-  if (isLogged) {
-    return <Navigate to="/dashboard" replace />;
-  }
+  // if (isLogged) {
+  //   return <Navigate to="/dashboard" replace />;
+  // }
 
   const topics = [
     "Asymptotes",

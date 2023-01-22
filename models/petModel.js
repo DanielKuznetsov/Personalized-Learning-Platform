@@ -3,48 +3,48 @@ const validator = require("validator");
 const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
 
-const petSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, "Please tell us your pet name!"],
-  },
-  email: {
-    type: String,
-    required: [true, "Please tell us your pet email!"],
-    unique: true,
-    lowercase: true,
-    validate: [validator.isEmail, "Please provide a valid email!"],
-  },
-  password: {
-    type: String,
-    required: [true, "Please tell your password!"],
-    minlength: 8,
-    select: false,
-  },
-  passwordConfirm: {
-    type: String,
-    required: [true, "Please confirm your password!"],
-    validate: {
-      validator: function (el) {
-        return el === this.password; // abs === xyz -> ValidationError
+const studentSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: [true, "Please tell us your name!"],
+    },
+    email: {
+      type: String,
+      required: [true, "Please tell us your email!"],
+      unique: true,
+      lowercase: true,
+      validate: [validator.isEmail, "Please provide a valid email!"],
+    },
+    password: {
+      type: String,
+      required: [true, "Please tell your password!"],
+      minlength: 8,
+      select: false,
+    },
+    passwordConfirm: {
+      type: String,
+      required: [true, "Please confirm your password!"],
+      validate: {
+        validator: function (el) {
+          return el === this.password; // abs === xyz -> ValidationError
+        },
+        message: "Passwords are not the same",
       },
-      message: "Passwords are not the same",
+    },
+    role: {
+      type: String,
+      enum: ["student", "teacher", "admin"],
+      default: "student",
+    },
+    active: {
+      type: Boolean,
+      default: true,
+      select: false,
     },
   },
-  passwordChangedAt: Date,
-  role: {
-    type: String,
-    enum: ["pet", "owner", "user", "guide", "lead-guide", "admin"],
-    default: "user",
-  },
-  passwordResetToken: String,
-  passwordResetExpires: Date,
-  active: {
-    type: Boolean,
-    default: true,
-    select: false,
-  },
-});
+  { timestamps: true }
+);
 
 petSchema.pre("save", async function (next) {
   // isModified() is available on all fields (predefined function)

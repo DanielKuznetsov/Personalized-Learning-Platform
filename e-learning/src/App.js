@@ -24,68 +24,68 @@ function App() {
 
   const secretPass = "XkhZG4fW2t2W";
 
-  const encryptData = (text) => {
-    const data = CryptoJS.AES.encrypt(
-      JSON.stringify(text),
-      secretPass
-    ).toString();
+  // const encryptData = (text) => {
+  //   const data = CryptoJS.AES.encrypt(
+  //     JSON.stringify(text),
+  //     secretPass
+  //   ).toString();
 
-    localStorage.setItem("cloneEncrypt", data);
-  };
+  //   localStorage.setItem("cloneEncrypt", data);
+  // };
 
-  useEffect(() => {
-    if (jwt) {
-      const bytes = CryptoJS.AES.decrypt(
-        localStorage.getItem("cloneEncrypt"),
-        secretPass
-      );
-      const data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-      setDecreptedData(data);
-      // setIsLogged(decreptedData === localStorage.getItem("jwt"));
-      localStorage.setItem(
-        "isLogged",
-        decreptedData === localStorage.getItem("jwt")
-      );
-    }
+  // useEffect(() => {
+  //   if (jwt) {
+  //     const bytes = CryptoJS.AES.decrypt(
+  //       localStorage.getItem("cloneEncrypt"),
+  //       secretPass
+  //     );
+  //     const data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+  //     setDecreptedData(data);
+  //     // setIsLogged(decreptedData === localStorage.getItem("jwt"));
+  //     localStorage.setItem(
+  //       "isLogged",
+  //       decreptedData === localStorage.getItem("jwt")
+  //     );
+  //   }
 
-    if (isLogged) {
-      async function getUser() {
-        try {
-          const user = await axios.get(
-            `http://localhost:4000/api/v1/pets/${localStorage.getItem("id")}`,
-            {
-              headers: {
-                "Content-Type": "application/json",
-              },
-              withCredentials: true,
-            }
-          );
+  //   if (isLogged) {
+  //     async function getUser() {
+  //       try {
+  //         const user = await axios.get(
+  //           `http://localhost:4000/api/v1/pets/${localStorage.getItem("id")}`,
+  //           {
+  //             headers: {
+  //               "Content-Type": "application/json",
+  //             },
+  //             withCredentials: true,
+  //           }
+  //         );
 
-          console.log(user.data.data);
-          setUserData(user.data.data.pet[0]);
-        } catch (err) {
-          console.log(err.message);
-          setIsLogged(false);
-          navigate("/login");
-        }
-      }
+  //         console.log(user.data.data);
+  //         setUserData(user.data.data.pet[0]);
+  //       } catch (err) {
+  //         console.log(err.message);
+  //         setIsLogged(false);
+  //         navigate("/login");
+  //       }
+  //     }
 
-      getUser();
-    }
-  }, [jwt, decreptedData, isLogged, navigate]);
+  //     getUser();
+  //   }
+  // }, [jwt, decreptedData, isLogged, navigate]);
 
   return (
     <div className="App">
       <Routes>
-        <Route exact path="/" element={<Home isLogged={isLogged} />} />
+        <Route exact path="/" element={<Home />} />
         <Route
           exact
           path="/login"
           element={
             <AuthForm
               setUserData={setUserData}
-              encryptData={encryptData}
-              isLogged={isLogged}
+              // encryptData={encryptData}
+              // isLogged={isLogged}
               login
             />
           }
@@ -96,16 +96,16 @@ function App() {
           element={
             <AuthForm
               setUserData={setUserData}
-              encryptData={encryptData}
+              // encryptData={encryptData}
               signup
             />
           }
         />
-        <Route
+        {/* <Route
           exact
           path="/dashboard"
           element={<Concept isLogged={isLogged} />}
-        />
+        /> */}
         <Route exact path="*" element={<Home />} />
         {/* NOT FOUND PAGE OR PAGE IN CONSTRUCTION */}
       </Routes>
