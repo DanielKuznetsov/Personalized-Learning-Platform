@@ -21,8 +21,6 @@ exports.protect = asyncHandler(async (req, res, next) => {
 
       next();
     } catch (error) {
-      console.log(error);
-
       res.status(201);
 
       throw new Error("Not authorized!");

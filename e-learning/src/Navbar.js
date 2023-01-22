@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Logo from "./Logo";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "./features/auth/authSlice";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 function Navbar() {
   const navigate = useNavigate();

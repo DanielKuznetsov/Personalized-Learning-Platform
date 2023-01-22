@@ -4,7 +4,7 @@ import Home from "./Home";
 import "./styles/App.scss";
 import Login from "./Login";
 import Navbar from "./Navbar";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (

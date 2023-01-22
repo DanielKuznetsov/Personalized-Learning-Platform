@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import LottieGif from "./LottieGif";
 import { useSelector, useDispatch } from "react-redux";
 import { login, reset } from "./features/auth/authSlice";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
@@ -25,7 +25,7 @@ function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { student, isSuccess, isError, isLoading, message } = useSelector(
+  const { student, isError, isLoading, message } = useSelector(
     (state) => state.auth
   );
 
@@ -36,9 +36,7 @@ function Login() {
 
     if (student) {
       navigate("/dashboard");
-      toast.success("Logged-in successfully!");
-
-      console.log(student);
+      toast.success("Logged-in successfuly!");
     }
 
     dispatch(reset());
