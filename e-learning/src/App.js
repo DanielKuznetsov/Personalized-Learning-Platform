@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import AuthForm from "./AuthForm";
+import Signup from "./Signup";
 import Home from "./Home";
 import "./styles/App.scss";
+import Login from "./Login";
 
 function App() {
   return (
@@ -9,8 +10,8 @@ function App() {
       <div className="App">
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/login" element={<AuthForm login />} />
-          <Route exact path="/signup" element={<AuthForm signupAni />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/signup" element={<Signup />} />
         </Routes>
       </div>
     </>
