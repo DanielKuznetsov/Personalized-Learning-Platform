@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 const asyncHandler = require("express-async-handler");
 const Student = require("../models/studentModel");
 
+// Register student /api/students/signup PUBLIC
 exports.signupStudent = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -33,7 +34,13 @@ exports.signupStudent = asyncHandler(async (req, res) => {
 
   if (student) {
     res.status(201).json({
-      student,
+      student: {
+        _id: student._id,
+        token: generateToken(student._id),
+        name: student.name,
+        email: student.email,
+        password: student.password,
+      },
     });
   } else {
     res.status(400);
@@ -42,11 +49,28 @@ exports.signupStudent = asyncHandler(async (req, res) => {
   }
 });
 
-exports.loginStudent = (req, res) => {
-  res.status(200).json({
-    message: "Login route",
-  });
-};
+// Login student /api/students/login PUBLIC
+exports.loginStudent = asyncHandler(async (req, res) => {
+  const { email, password } = req.body;
+
+  // Find student's account
+  const student = await Student.findOne({ email }).select("+password");
+
+  if (student && (await bcrypt.compare(password, student.password))) {
+    res.status(201).json({
+      student: {
+        _id: student._id,
+        name: student.name,
+        email: student.email,
+        token: generateToken(student._id),
+      },
+    });
+  } else {
+    res.status(400);
+
+    throw new Error("Email or password is incorrect!");
+  }
+});
 
 exports.getMe = (req, res) => {
   res.status(200).json({

@@ -5,7 +5,6 @@ const studentSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Please tell us your name!"],
     },
     email: {
       type: String,
@@ -17,7 +16,6 @@ const studentSchema = new mongoose.Schema(
     password: {
       type: String,
       required: [true, "Please tell your password!"],
-      minlength: 8,
       select: false,
     },
     role: {
