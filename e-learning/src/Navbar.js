@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "./Button";
 import "./styles/Navbar.scss";
 import { Link, useNavigate } from "react-router-dom";
@@ -6,9 +6,17 @@ import Logo from "./Logo";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "./features/auth/authSlice";
 
-function Navbar({ loggedIn }) {
+function Navbar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const { student } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (!student) {
+      navigate("/");
+    }
+  }, [navigate, student]);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -29,7 +37,7 @@ function Navbar({ loggedIn }) {
         </a> */}
       </div>
 
-      {loggedIn ? (
+      {student ? (
         <div className="user">
           <ion-icon name="notifications-outline"></ion-icon>
           <div className="user-image">User Image</div>

@@ -10,16 +10,19 @@ import test from "./images/test.json";
 import FeatureCard from "./FeatureCard";
 import Footer from "./Footer";
 import LottieGif from "./LottieGif";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-function Home({ isLogged }) {
-  // useEffect(() => {
-  //   window.location.reload();
-  // }, [isLogged]);
+function Home() {
+  const navigate = useNavigate();
 
-  // if (isLogged) {
-  //   return <Navigate to="/dashboard" replace />;
-  // }
+  const { student, isSuccess } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (isSuccess || student) {
+      navigate("/dashboard");
+    }
+  }, [isSuccess, navigate, student]);
 
   const topics = [
     "Asymptotes",
