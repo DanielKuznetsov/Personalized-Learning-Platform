@@ -42,6 +42,6 @@ studentSchema.pre(/^find/, function (next) {
   next();
 });
 
-const Student = mongoose.model("Student", petSchema);
+const Student = mongoose.model("Student", studentSchema);
 
 module.exports = Student;
