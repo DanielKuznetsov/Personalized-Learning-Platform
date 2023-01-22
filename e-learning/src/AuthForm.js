@@ -5,12 +5,13 @@ import signInSuccess from "./images/sign-in-success.json";
 import signupGif from "./images/signup.json";
 import LottieGif from "./LottieGif";
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { signup, reset } from "./features/auth/authSlice";
+import { toast } from "react-toastify";
 
-function AuthForm({ login, signup, encryptData }) {
-  const navigate = useNavigate();
-
+function AuthForm({ login, signupAni, encryptData }) {
   const [gif, setGif] = useState();
   const [formData, setFormData] = useState({
     name: "",
@@ -19,86 +20,66 @@ function AuthForm({ login, signup, encryptData }) {
     passwordConfirm: "",
   });
 
+  const { name, email, password, passwordConfirm } = formData;
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { student, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+
   useEffect(() => {
-    // Renderring an animation
+    // Renderring animation
     if (login) {
       setGif(signInSuccess);
     }
-
-    if (signup) {
+    if (signupAni) {
       setGif(signupGif);
     }
-  }, [login, signup]);
 
-  // async function handleSubmitLogin(event) {
-  //   event.preventDefault();
+    if (isError) {
+      toast.error(message);
+    }
 
-  //   try {
-  //     const data = await axios.post(
-  //       "http://localhost:4000/api/v1/pets/login",
-  //       {
-  //         email: formData.email,
-  //         password: formData.password,
-  //       },
-  //       {
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //         withCredentials: true,
-  //       }
-  //     );
+    if (isSuccess || student) {
+      navigate("/");
+    }
 
-  //     localStorage.setItem("id", data.data.data.pet._id);
-  //     localStorage.setItem("jwt", data.data.token);
-  //     encryptData(data.data.token);
-  //     navigate("/");
-  //     window.location.reload();
-  //     setFormData({
-  //       name: "",
-  //       email: "",
-  //       password: "",
-  //       passwordConfirm: "",
-  //     });
-  //   } catch (err) {
-  //     console.log(err.response.data);
-  //   }
-  // }
+    dispatch(reset());
+  }, [
+    login,
+    signupAni,
+    dispatch,
+    isError,
+    isSuccess,
+    message,
+    navigate,
+    student,
+  ]);
 
-  // async function handleSubmitSignup(event) {
-  //   event.preventDefault();
+  const handleOnChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
-  //   try {
-  //     const data = await axios.post(
-  //       "http://localhost:4000/api/v1/pets/signup",
-  //       {
-  //         name: formData.name,
-  //         email: formData.email,
-  //         password: formData.password,
-  //         passwordConfirm: formData.passwordConfirm,
-  //       },
-  //       {
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //         withCredentials: true,
-  //       }
-  //     );
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
 
-  //     localStorage.setItem("id", data.data.data.pet._id);
-  //     localStorage.setItem("jwt", data.data.token);
-  //     encryptData(data.data.token);
-  //     navigate("/");
-  //     //   window.location.reload();
-  //     setFormData({
-  //       name: "",
-  //       email: "",
-  //       password: "",
-  //       passwordConfirm: "",
-  //     });
-  //   } catch (err) {
-  //     console.log(err.response.data);
-  //   }
-  // }
+    if (password !== passwordConfirm) {
+      toast.error("Passwords don't match!");
+    } else {
+      const studentData = {
+        name,
+        email,
+        password,
+      };
+
+      dispatch(signup(studentData));
+    }
+  };
 
   return (
     <div className="AuthForm">
@@ -112,6 +93,7 @@ function AuthForm({ login, signup, encryptData }) {
               account to view today's challenge.
             </p>
             {/* <form onSubmit={handleSubmitLogin} className="form"> */}
+
             <form className="form">
               <label className="form-label" name="email">
                 Email:
@@ -149,6 +131,7 @@ function AuthForm({ login, signup, encryptData }) {
               </label>
               <Button submit fullWidth text="Login" />
             </form>
+
             <div className="no-account">
               <span className="no-account-text">
                 Don't have an account yet?{" "}
@@ -160,7 +143,7 @@ function AuthForm({ login, signup, encryptData }) {
           </div>
         )}
 
-        {signup && (
+        {signupAni && (
           <div className="content">
             <Logo />
             <p className="title">Let's get started!</p>
@@ -169,21 +152,16 @@ function AuthForm({ login, signup, encryptData }) {
               growth and development.
             </p>
             {/* <form onSubmit={handleSubmitSignup} className="form"> */}
-            <form  className="form">
+            <form onSubmit={handleOnSubmit} className="form">
               <label className="form-label" name="name">
                 Full Name:
                 <input
                   className="form-input"
                   type="text"
                   name="name"
-                  value={formData.name}
-                  onChange={(event) =>
-                    setFormData({
-                      ...formData,
-                      [event.target.name]: event.target.value,
-                    })
-                  }
-                  placeholder="Daniel Kuznetsov"
+                  value={name}
+                  onChange={handleOnChange}
+                  placeholder="Enter your name"
                 />
                 <ion-icon name="person-outline"></ion-icon>
               </label>
@@ -193,13 +171,8 @@ function AuthForm({ login, signup, encryptData }) {
                   className="form-input"
                   type="text"
                   name="email"
-                  value={formData.email}
-                  onChange={(event) =>
-                    setFormData({
-                      ...formData,
-                      [event.target.name]: event.target.value,
-                    })
-                  }
+                  value={email}
+                  onChange={handleOnChange}
                   placeholder="example@gmail.com"
                 />
                 <ion-icon name="at-outline"></ion-icon>
@@ -210,13 +183,8 @@ function AuthForm({ login, signup, encryptData }) {
                   className="form-input"
                   type="password"
                   name="password"
-                  value={formData.password}
-                  onChange={(event) =>
-                    setFormData({
-                      ...formData,
-                      [event.target.name]: event.target.value,
-                    })
-                  }
+                  value={password}
+                  onChange={handleOnChange}
                   placeholder="Enter password"
                 />
                 <ion-icon name="lock-closed-outline"></ion-icon>
@@ -227,13 +195,8 @@ function AuthForm({ login, signup, encryptData }) {
                   className="form-input"
                   type="password"
                   name="passwordConfirm"
-                  value={formData.passwordConfirm}
-                  onChange={(event) =>
-                    setFormData({
-                      ...formData,
-                      [event.target.name]: event.target.value,
-                    })
-                  }
+                  value={passwordConfirm}
+                  onChange={handleOnChange}
                   placeholder="Confirm password"
                 />
                 <ion-icon name="lock-closed-outline"></ion-icon>
