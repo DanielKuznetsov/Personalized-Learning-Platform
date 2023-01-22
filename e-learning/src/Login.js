@@ -30,7 +30,7 @@ function Login() {
     }
 
     if (isSuccess || student) {
-      navigate("/");
+      navigate("/dashboard");
       toast.success("Logged-in successfully!");
     }
 

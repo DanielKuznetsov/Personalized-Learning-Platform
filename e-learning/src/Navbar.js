@@ -1,10 +1,22 @@
 import React from "react";
 import Button from "./Button";
 import "./styles/Navbar.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "./Logo";
+import { useSelector, useDispatch } from "react-redux";
+import { logout, reset } from "./features/auth/authSlice";
 
 function Navbar({ loggedIn }) {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    dispatch(reset());
+
+    navigate("/");
+  };
+
   return (
     <div className="Navbar">
       <div className="branding">
@@ -25,6 +37,7 @@ function Navbar({ loggedIn }) {
             <p className="name">Daniel Kuznetsov</p>
             <p className="role">Student</p>
           </div>
+          <button onClick={handleLogout}>Logout</button>
         </div>
       ) : (
         <div className="auth">

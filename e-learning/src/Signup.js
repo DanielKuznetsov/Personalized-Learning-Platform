@@ -32,7 +32,7 @@ function Signup() {
     }
 
     if (isSuccess || student) {
-      navigate("/");
+      navigate("/dashboard");
     }
 
     dispatch(reset());

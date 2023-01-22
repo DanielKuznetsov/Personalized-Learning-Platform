@@ -89,9 +89,15 @@ export const authSlice = createSlice({
         state.isError = true;
         state.message = action.payload;
         state.student = null;
+      })
+      .addCase(logout.fulfilled, (state) => {
+        state.student = null;
       });
   },
 });
 
+export const logout = createAsyncThunk("auth/logout", () => {
+  return localStorage.removeItem("student");
+});
 export const { reset } = authSlice.actions;
 export default authSlice.reducer;
