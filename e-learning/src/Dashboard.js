@@ -74,10 +74,10 @@ function Dashboard() {
                 <td className="title">Calculus</td>
                 <td className="opacity">Some Description About Calculus</td>
                 <td className="opacity">5</td>
-                <td>
+                <td className="td-link">
                   <Link className="link" to="/link-to-concept">
                     View
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
                   </Link>
                 </td>
               </tr>
@@ -87,10 +87,10 @@ function Dashboard() {
                   Some Description About Calculus
                 </td>
                 <td className="opacity border-top">5</td>
-                <td className="border-top">
+                <td className="border-top td-link">
                   <Link className="link" to="/link-to-concept">
                     View
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
                   </Link>
                 </td>
               </tr>

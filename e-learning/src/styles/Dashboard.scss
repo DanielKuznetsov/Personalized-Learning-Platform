@@ -79,8 +79,14 @@
             }
           }
 
+          .td-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
           .link {
-            padding: 0.75rem 0 0.75rem 1.5rem;
+            padding: 0.75rem 1.5rem;
             background-color: #2260eb;
             text-decoration: none;
             color: #fff;
@@ -90,7 +96,7 @@
             align-items: center;
 
             ion-icon {
-                margin-left: .35rem;
+              margin-left: 0.35rem;
             }
           }
         }
