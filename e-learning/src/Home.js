@@ -10,8 +10,9 @@ import test from "./images/test.json";
 import FeatureCard from "./FeatureCard";
 import Footer from "./Footer";
 import LottieGif from "./LottieGif";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Logo from "./Logo";
 
 function Home() {
   const navigate = useNavigate();
@@ -45,7 +46,18 @@ function Home() {
   return (
     <div className="Home">
       <div className="Home-wrapper">
-        <Navbar />
+        {/* <Navbar /> */}
+        <div className="Home-wrapper-navbar">
+          <Logo />
+          <div class="auth-btns">
+            <Link to="/login">
+              <Button text="Login" />
+            </Link>
+            <Link to="/signup">
+              <Button text="Sign Up" />
+            </Link>
+          </div>
+        </div>
         <div className="first-block">
           <div className="content">
             {/* <p className="title">All You need to Know for your class is here</p> */}

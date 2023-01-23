@@ -30,7 +30,7 @@ function Navbar() {
   return (
     <>
       <div className="Navbar">
-        <div className="branding">
+        <div className="Navbar-navigation">
           <Logo />
 
           {/* ONLY WHEN LOGGED IN */}
@@ -40,7 +40,13 @@ function Navbar() {
         </a> */}
         </div>
 
-        {student ? (
+        <div className="Navbar-student">
+          <p>Image</p>
+          <p>Name with role</p>
+          <Button handleLogout={handleLogout} text="Logout" />
+        </div>
+
+        {/* {student ? (
           <div className="user">
             <ion-icon name="notifications-outline"></ion-icon>
             <div className="user-image">User Image</div>
@@ -59,7 +65,7 @@ function Navbar() {
               <Button text="Sign Up" />
             </Link>
           </div>
-        )}
+        )} */}
       </div>
     </>
   );

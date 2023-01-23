@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./styles/Button.scss";
 
-function Button({ text, shadow, submit, fullWidth }) {
+function Button({ text, shadow, submit, fullWidth, handleLogout }) {
   const [classes, setClasses] = useState("Button-btn");
 
   useEffect(() => {
@@ -19,15 +19,13 @@ function Button({ text, shadow, submit, fullWidth }) {
   }, [shadow, submit, fullWidth]);
 
   return (
-    <div className="Button">
-      <button
-        type={submit ? "submit" : ""}
-        className={classes}
-        // className={shadow ? "Button-btn shadow" : "Button-btn"}
-      >
-        {text || "Add text"}
-      </button>
-    </div>
+    <button
+      type={submit ? "submit" : ""}
+      className={classes}
+      onClick={handleLogout}
+    >
+      {text || "Add text"}
+    </button>
   );
 }
 

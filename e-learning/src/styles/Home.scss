@@ -5,6 +5,19 @@
   padding: 3rem; // taken from index.scss (body)
 
   &-wrapper {
+
+    &-navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .auth-btns {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+    }
+
     .first-block {
       margin-top: 7rem;
       display: flex;
