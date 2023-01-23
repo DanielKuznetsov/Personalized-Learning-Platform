@@ -1,6 +1,7 @@
 import "./styles/Topic.scss";
-import { Link } from "react-router-dom";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import TopicConcept from "./TopicConcept";
 
 function Topic() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,44 +26,9 @@ function Topic() {
 
       {isOpen ? (
         <ul className="Topic-ul">
-          <li className="Topic-concept">
-            <p className="Topic-concept-title width-75">Intro to Limits</p>
-            <p className="Topic-concept-description width-2">
-              Basic concept and its usage in functions
-            </p>
-            <Link
-              to="to-certain-concept"
-              className="Topic-concept-link width-1"
-            >
-              <span>Read More</span>
-            </Link>
-          </li>
-
-          <li className="Topic-concept">
-            <p className="Topic-concept-title width-75">L'Hopital's rule</p>
-            <p className="Topic-concept-description width-2">
-              Evaluating limits involving indeterminate forms
-            </p>
-            <Link
-              to="to-certain-concept"
-              className="Topic-concept-link width-1"
-            >
-              <span>Read More</span>
-            </Link>
-          </li>
-
-          <li className="Topic-concept">
-            <p className="Topic-concept-title width-75">Limits at Infinity</p>
-            <p className="Topic-concept-description width-2">
-              Evaluate limits at infinity and asymptotes
-            </p>
-            <Link
-              to="to-certain-concept"
-              className="Topic-concept-link width-1"
-            >
-              <span>Read More</span>
-            </Link>
-          </li>
+          {[12, 23, 34].map((el) => (
+            <TopicConcept key={el} />
+          ))}
         </ul>
       ) : (
         ""
