@@ -5,8 +5,43 @@
 
   .wrapper {
     margin-top: 5rem;
-    width: 60%;
     margin: 10rem auto;
+
+    display: flex;
+    gap: 6rem;
+    justify-content: center;
+
+    .subject-nav {
+      width: 15%;
+
+      &-list {
+        list-style: none;
+      }
+      &-item {
+        font-size: 1.8rem;
+        font-weight: 600;
+        padding: 0.6rem 1.35rem;
+        cursor: pointer;
+        opacity: 0.8;
+        border-radius: 0.6rem;
+        transition: all 0.25s ease-in-out;
+
+        &:not(:last-child) {
+          margin-bottom: 2rem;
+        }
+
+        &:hover {
+          color: #cc1600;
+          background-color: #f3efea;
+        }
+
+        // Class for conditional renderring of content
+        &.active {
+          color: #cc1600;
+          background-color: #f3efea;
+        }
+      }
+    }
 
     .Header {
       font-family: "Montserrat", sans-serif;
@@ -37,6 +72,7 @@
         width: 100%;
         border: 2px solid rgba(26, 37, 82, 0.25);
         border-radius: 1rem;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
         thead {
           tr {

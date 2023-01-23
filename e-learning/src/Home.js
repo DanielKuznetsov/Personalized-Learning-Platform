@@ -46,7 +46,6 @@ function Home() {
   return (
     <div className="Home">
       <div className="Home-wrapper">
-        
         <div className="Home-wrapper-navbar">
           <Logo />
           <div className="auth-btns">
@@ -80,9 +79,9 @@ function Home() {
                   placeholder="What are you studying?"
                 ></input>
               </label>
-              <a href="to-signup">
+              <Link to="/login">
                 <Button shadow text="Start Practicing" />
-              </a>
+              </Link>
             </div>
           </div>
           <div className="gif-hw">
