@@ -9,6 +9,40 @@
   justify-content: space-between;
 
   &-navigation {
+    display: flex;
+    align-items: flex-end;
+    gap: 3rem;
+
+    .link {
+      margin-right: 3rem;
+      font-size: 2.2rem;
+      text-decoration: none;
+      display: block;
+      color: #36454f;
+      position: relative;
+      transition: all 0.2s ease-in-out;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        border-radius: 1rem;
+        background-color: #f6d073;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:hover.link::after {
+        width: 100%;
+      }
+
+      // For conditional renderring
+      &.dash::after {
+        width: 100%;
+      }
+    }
   }
 
   &-student {
@@ -20,73 +54,8 @@
       font-size: 2.2rem;
     }
   }
+}
 
-  .branding {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-
-    .back-home {
-      text-decoration: none;
-      align-items: center;
-      display: flex;
-      gap: 1rem;
-
-      color: #36454f;
-
-      &-icon {
-      }
-      &-direction {
-      }
-    }
-  }
-
-  .auth {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .user {
-    display: flex;
-    align-items: center;
-
-    ion-icon {
-      font-size: 2.8rem;
-      margin-right: 1.5rem;
-      position: relative;
-      padding: 1rem;
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0.5rem;
-        right: 1rem;
-        width: 0.8rem;
-        height: 0.8rem;
-        border-radius: 50%;
-        background-color: red;
-      }
-    }
-
-    &-image {
-      width: 5rem;
-      height: 5rem;
-      border-radius: 50%;
-      background-color: green;
-      margin-right: 1rem;
-    }
-
-    &-name-role {
-      display: flex;
-      flex-direction: column;
-
-      .name {
-        font-size: 1.8rem;
-      }
-
-      .role {
-        opacity: 0.6;
-      }
-    }
-  }
+.margin-left {
+  margin-left: 50%;
 }

@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
 import Button from "./Button";
 import "./styles/Navbar.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "./features/auth/authSlice";
 import { toast } from "react-toastify";
 
 function Navbar() {
+  const location = useLocation();
+  const pathname = location.pathname.split("/")[1];
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -32,6 +35,24 @@ function Navbar() {
       <div className="Navbar">
         <div className="Navbar-navigation">
           <Logo />
+          <Link
+            to="/dashboard"
+            className={
+              pathname === "dashboard"
+                ? "link dash margin-left"
+                : "link margin-left"
+            }
+          >
+            <span>Dashboard</span>
+          </Link>
+          <Link
+            to="/practiceAll"
+            className={
+              pathname === "practiceAll" ? "link dash margin-left" : "link"
+            }
+          >
+            <span>Practice</span>
+          </Link>
         </div>
 
         <div className="Navbar-student">
