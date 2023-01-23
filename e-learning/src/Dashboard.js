@@ -80,67 +80,67 @@ function Dashboard() {
             </div>
 
             <div className="Topic">
-              <p className="Topic-title width-1">Limits</p>
-              <p className="Topic-description width-3">Some Description About Limits</p>
-              <Link className="Topic-link width-1" to="/link-to-concept">
-                View
-                <ion-icon name="arrow-forward-outline"></ion-icon>
-              </Link>
-              <span className="Topic-more-concepts width-1">
-                <ion-icon name="add-circle-outline"></ion-icon>
-              </span>
+              <div className="Topic-header">
+                <p className="Topic-title width-1">Limits</p>
+                <p className="Topic-description width-3">
+                  Some Description About Limits
+                </p>
+                <Link className="Topic-link width-1" to="/link-to-concept">
+                  View
+                  <ion-icon name="arrow-forward-outline"></ion-icon>
+                </Link>
+                <span className="Topic-more-concepts-btn width-1">
+                  <button className="btn">
+                    <ion-icon name="add-circle-outline"></ion-icon>
+                  </button>
+                </span>
+              </div>
+
+              <ul className="Topic-ul">
+                <li className="Topic-concept">
+                  <p className="Topic-concept-title width-1">Intro to Limits</p>
+                  <p className="Topic-concept-description width-2">
+                    Basic concept and its usage in functions
+                  </p>
+                  <Link
+                    to="to-certain-concept"
+                    className="Topic-concept-link width-1"
+                  >
+                    <span>Read More</span>
+                  </Link>
+                </li>
+
+                <li className="Topic-concept">
+                  <p className="Topic-concept-title width-1">
+                    L'Hopital's rule
+                  </p>
+                  <p className="Topic-concept-description width-2">
+                    Evaluating limits involving indeterminate forms
+                  </p>
+                  <Link
+                    to="to-certain-concept"
+                    className="Topic-concept-link width-1"
+                  >
+                    <span>Read More</span>
+                  </Link>
+                </li>
+
+                <li className="Topic-concept">
+                  <p className="Topic-concept-title width-1">
+                    Limits at Infinity
+                  </p>
+                  <p className="Topic-concept-description width-2">
+                    Evaluate limits at infinity and asymptotes
+                  </p>
+                  <Link
+                    to="to-certain-concept"
+                    className="Topic-concept-link width-1"
+                  >
+                    <span>Read More</span>
+                  </Link>
+                </li>
+              </ul>
             </div>
-
-
-            
-
-            <table>
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Description</th>
-                  <th>Link</th>
-                  <th>Expand</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="title">Limits</td>
-                  <td className="opacity">Some Description About Limits</td>
-                  <td className="td-link">
-                    <Link className="link" to="/link-to-concept">
-                      View
-                      <ion-icon name="arrow-forward-outline"></ion-icon>
-                    </Link>
-                  </td>
-                  <td className="opacity more-concepts">
-                    <ion-icon name="add-circle-outline"></ion-icon>
-                  </td>
-                </tr>
-
-                {/* <div className="Concepts">
-                  <p className="Concepts-title">Title</p>
-                  <p className="Concepts-description">Description</p>
-                  <p className="Concepts-link">View Link</p>
-                </div> */}
-
-                <tr>
-                  <td className="title border-top">Limits</td>
-                  <td className="opacity border-top">
-                    Some Description About Limits
-                  </td>
-                  <td className="td-link border-top">
-                    <Link className="link" to="/link-to-concept">
-                      View
-                      <ion-icon name="arrow-forward-outline"></ion-icon>
-                    </Link>
-                  </td>
-                  <td className="opacity border-top more-concepts">
-                    <ion-icon name="add-circle-outline"></ion-icon>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
       </div>
