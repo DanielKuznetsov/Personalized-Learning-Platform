@@ -46,10 +46,10 @@ function Home() {
   return (
     <div className="Home">
       <div className="Home-wrapper">
-        {/* <Navbar /> */}
+        
         <div className="Home-wrapper-navbar">
           <Logo />
-          <div class="auth-btns">
+          <div className="auth-btns">
             <Link to="/login">
               <Button text="Login" />
             </Link>
@@ -58,6 +58,7 @@ function Home() {
             </Link>
           </div>
         </div>
+
         <div className="first-block">
           <div className="content">
             {/* <p className="title">All You need to Know for your class is here</p> */}
