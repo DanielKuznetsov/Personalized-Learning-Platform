@@ -51,7 +51,7 @@ function Navbar() {
               pathname === "practiceAll" ? "link dash margin-left" : "link"
             }
           >
-            <span>Practice</span>
+            <span>Practice Problems</span>
           </Link>
         </div>
 

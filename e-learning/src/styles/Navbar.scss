@@ -3,7 +3,6 @@
 .Navbar {
   font-family: "Nunito", sans-serif;
   width: 100%;
-  padding: 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,7 +13,6 @@
     gap: 3rem;
 
     .link {
-      margin-right: 3rem;
       font-size: 2.2rem;
       text-decoration: none;
       display: block;
@@ -57,5 +55,5 @@
 }
 
 .margin-left {
-  margin-left: 50%;
+  margin-left: 30rem;
 }
