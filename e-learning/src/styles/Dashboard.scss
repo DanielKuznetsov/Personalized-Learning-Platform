@@ -5,6 +5,8 @@
 
   .wrapper {
     margin-top: 5rem;
+    width: 60%;
+    margin: 10rem auto;
 
     .Header {
       font-family: "Montserrat", sans-serif;
@@ -23,7 +25,75 @@
 
       &-subtitle {
         font-size: 1.4rem;
-        opacity: .8;
+        opacity: 0.8;
+      }
+    }
+
+    .Table {
+      margin-top: 5rem;
+
+      table {
+        border-spacing: 0;
+        width: 100%;
+        border: 2px solid rgba(26, 37, 82, 0.25);
+        border-radius: 1rem;
+
+        thead {
+          tr {
+            th {
+              border-bottom: 2px solid rgba(26, 37, 82, 0.25);
+              padding: 1.25rem;
+              opacity: 0.8;
+              background-color: hsl(30, 29%, 93%);
+
+              &:first-child {
+                border-top-left-radius: 1rem;
+              }
+              &:last-child {
+                border-top-right-radius: 1rem;
+              }
+            }
+          }
+        }
+
+        tbody {
+          tr {
+            text-align: center;
+            font-weight: 600;
+
+            .title {
+              font-size: 1.7rem;
+              opacity: 1;
+            }
+
+            td {
+              padding: 1.5rem;
+
+              &.opacity {
+                color: rgba(#000, 0.5);
+              }
+            }
+
+            td.border-top {
+              border-top: 2px solid rgba(26, 37, 82, 0.25);
+            }
+          }
+
+          .link {
+            padding: 0.75rem 0 0.75rem 1.5rem;
+            background-color: #2260eb;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.4rem;
+            border-radius: 2rem;
+            display: flex;
+            align-items: center;
+
+            ion-icon {
+                margin-left: .35rem;
+            }
+          }
+        }
       }
     }
   }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import "./styles/Dashboard.scss";
 
@@ -58,8 +59,43 @@ function Dashboard() {
           </p>
         </header>
 
-        <div className="Topics">
-          <div>List of Card-Links to topics</div>
+        <div className="Table">
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Number of Topics</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="title">Calculus</td>
+                <td className="opacity">Some Description About Calculus</td>
+                <td className="opacity">5</td>
+                <td>
+                  <Link className="link" to="/link-to-concept">
+                    View
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                  </Link>
+                </td>
+              </tr>
+              <tr>
+                <td className="title border-top">Calculus</td>
+                <td className="opacity border-top">
+                  Some Description About Calculus
+                </td>
+                <td className="opacity border-top">5</td>
+                <td className="border-top">
+                  <Link className="link" to="/link-to-concept">
+                    View
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                  </Link>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
