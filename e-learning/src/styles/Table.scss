@@ -1,0 +1,26 @@
+.Table {
+  margin-top: 5rem;
+  border: 2px solid rgba(26, 37, 82, 0.25);
+  border-radius: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  width: 80rem;
+  margin-bottom: 10rem;
+
+  &-head {
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background-color: hsl(30, 29%, 93%);
+    border-bottom: 2px solid rgba(26, 37, 82, 0.25);
+
+    .item {
+      text-align: center;
+      padding: 1.25rem 2rem;
+      opacity: 0.8;
+      font-weight: 600;
+      font-size: 1.7rem;
+    }
+  }
+}
