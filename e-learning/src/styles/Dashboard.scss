@@ -43,27 +43,6 @@
       }
     }
 
-    .Header {
-      font-family: "Montserrat", sans-serif;
-
-      &-svg {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-      }
-
-      &-title {
-        font-family: "Montserrat", sans-serif;
-        font-size: 3rem;
-        font-weight: 600;
-      }
-
-      &-subtitle {
-        font-size: 1.4rem;
-        opacity: 0.8;
-      }
-    }
-
     .Table {
       margin-top: 5rem;
       border: 2px solid rgba(26, 37, 82, 0.25);
@@ -170,12 +149,20 @@
             &:hover {
               background-color: rgba(#50bcf8, 0.25);
             }
+
+            &:hover .Dashboard .wrapper .Table .Topic .Topic-ul {
+              display: block;
+            }
           }
         }
 
         &-ul {
           display: none;
           padding: 2rem;
+
+          &.block {
+            display: block;
+          }
         }
 
         &-concept {
