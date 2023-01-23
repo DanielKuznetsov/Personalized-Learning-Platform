@@ -63,7 +63,7 @@ function Dashboard() {
                   <path d="m8.596 13.218c-.051 0-.103-.008-.155-.025l-3.939-1.283c-.263-.086-.406-.368-.321-.63s.367-.406.63-.321l3.939 1.283c.263.086.406.368.321.63-.068.212-.264.346-.475.346z" />
                 </g>
               </svg>
-              <p className="Header-title">Mathematics</p>
+              <p className="Header-title">Calculus</p>
             </div>
             <p className="Header-subtitle">
               There are <b>128 topics</b> available in a library with <b>9</b>{" "}
@@ -77,33 +77,37 @@ function Dashboard() {
                 <tr>
                   <th>Title</th>
                   <th>Description</th>
-                  <th>Number of Topics</th>
                   <th>Link</th>
+                  <th>Expand</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="title">Calculus</td>
-                  <td className="opacity">Some Description About Calculus</td>
-                  <td className="opacity">5</td>
+                  <td className="title">Limits</td>
+                  <td className="opacity">Some Description About Limits</td>
                   <td className="td-link">
                     <Link className="link" to="/link-to-concept">
                       View
                       <ion-icon name="arrow-forward-outline"></ion-icon>
                     </Link>
                   </td>
+                  <td className="opacity more-concepts">
+                    <ion-icon name="add-circle-outline"></ion-icon>
+                  </td>
                 </tr>
                 <tr>
-                  <td className="title border-top">Geometry</td>
+                  <td className="title border-top">Limits</td>
                   <td className="opacity border-top">
-                    Some Description About Geometry
+                    Some Description About Limits
                   </td>
-                  <td className="opacity border-top">5</td>
-                  <td className="border-top td-link">
+                  <td className="td-link border-top">
                     <Link className="link" to="/link-to-concept">
                       View
                       <ion-icon name="arrow-forward-outline"></ion-icon>
                     </Link>
+                  </td>
+                  <td className="opacity border-top more-concepts">
+                    <ion-icon name="add-circle-outline"></ion-icon>
                   </td>
                 </tr>
               </tbody>
