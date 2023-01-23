@@ -33,23 +33,20 @@ function Navbar() {
   return (
     <>
       <div className="Navbar">
-        <div className="Navbar-navigation">
+        <div>
           <Logo />
+        </div>
+
+        <div className="Navbar-navigation">
           <Link
             to="/dashboard"
-            className={
-              pathname === "dashboard"
-                ? "link dash margin-left"
-                : "link margin-left"
-            }
+            className={pathname === "dashboard" ? "link dash" : "link"}
           >
             <span>Dashboard</span>
           </Link>
           <Link
             to="/practiceAll"
-            className={
-              pathname === "practiceAll" ? "link dash margin-left" : "link"
-            }
+            className={pathname === "practiceAll" ? "link dash" : "link"}
           >
             <span>Practice Problems</span>
           </Link>
