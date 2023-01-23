@@ -66,6 +66,96 @@
 
     .Table {
       margin-top: 5rem;
+      border: 2px solid rgba(26, 37, 82, 0.25);
+      border-radius: 1rem;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+      width: 100%;
+      margin-bottom: 10rem;
+
+      &-head {
+        display: flex;
+        align-items: center;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        background-color: hsl(30, 29%, 93%);
+        border-bottom: 2px solid rgba(26, 37, 82, 0.25);
+
+        .item {
+          text-align: center;
+          padding: 1.25rem 2rem;
+          opacity: 0.8;
+          font-weight: 600;
+          font-size: 1.7rem;
+        }
+      }
+
+      .Topic {
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid rgba(26, 37, 82, 0.25);
+        margin-bottom: 10rem;
+
+        &-title {
+          opacity: 1;
+          font-weight: bold;
+        }
+
+        &-description {
+          word-break: break-all;
+          font-weight: 600;
+          opacity: 0.8;
+        }
+
+        & > * {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1.25rem 1.75rem;
+          // background-color: yellowgreen;
+        }
+
+        &-link {
+          padding: 0.75rem 0.15rem;
+          background-color: #2260eb;
+          text-decoration: none;
+          color: #fff;
+          font-size: 1.4rem;
+          border-radius: 2rem;
+          display: flex;
+          align-items: center;
+          font-weight: 700;
+
+          ion-icon {
+            margin-left: 0.5rem;
+            transition: all 0.2s ease-in-out;
+          }
+
+          &:hover {
+            ion-icon {
+              margin-left: 1rem;
+            }
+          }
+        }
+
+        &-more-concepts {
+          ion-icon {
+            padding: 0.5rem;
+            border-radius: 1rem;
+            background-color: rgba(#60ddfd, 0.15);
+            font-size: 2.6rem;
+            color: #1d56e9;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+          }
+
+          &:hover {
+            ion-icon {
+              background-color: rgba(#50bcf8, 0.25);
+            }
+          }
+        }
+      }
 
       table {
         border-spacing: 0;
@@ -150,10 +240,30 @@
 
             ion-icon {
               margin-left: 0.35rem;
+              transition: all 0.2s ease-in-out;
+            }
+
+            &:hover {
+              ion-icon {
+                margin-left: 1rem;
+              }
             }
           }
         }
       }
     }
+
+    .Concepts {
+      background-color: red;
+      display: flex;
+    }
   }
+}
+
+.width-1 {
+  flex: 1;
+}
+
+.width-3 {
+  flex: 3;
 }

@@ -72,6 +72,28 @@ function Dashboard() {
           </header>
 
           <div className="Table">
+            <div className="Table-head">
+              <p className="item width-1">Title</p>
+              <p className="item width-3">Description</p>
+              <p className="item width-1">Link</p>
+              <p className="item width-1">Expand</p>
+            </div>
+
+            <div className="Topic">
+              <p className="Topic-title width-1">Limits</p>
+              <p className="Topic-description width-3">Some Description About Limits</p>
+              <Link className="Topic-link width-1" to="/link-to-concept">
+                View
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </Link>
+              <span className="Topic-more-concepts width-1">
+                <ion-icon name="add-circle-outline"></ion-icon>
+              </span>
+            </div>
+
+
+            
+
             <table>
               <thead>
                 <tr>
@@ -95,6 +117,13 @@ function Dashboard() {
                     <ion-icon name="add-circle-outline"></ion-icon>
                   </td>
                 </tr>
+
+                {/* <div className="Concepts">
+                  <p className="Concepts-title">Title</p>
+                  <p className="Concepts-description">Description</p>
+                  <p className="Concepts-link">View Link</p>
+                </div> */}
+
                 <tr>
                   <td className="title border-top">Limits</td>
                   <td className="opacity border-top">
