@@ -8,6 +8,18 @@
 
     .subject-nav {
       flex: 1.5;
+
+      &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .link {
+        text-decoration: none;
+        color: inherit;
+        
+      }
     }
 
     .Content {

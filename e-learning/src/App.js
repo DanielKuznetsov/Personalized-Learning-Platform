@@ -25,9 +25,9 @@ function App() {
           concepts: [
             {
               title: "Limits at Infinity",
-              urlTitle: "atInfinity",
+              urlTitle: "infinity",
               conceptDescription: "121212Evaluate limits at infinity and asymptotes",
-              link: "/calculusOne/limits/atInifnity",
+              link: "/calculusOne/limits/infinity",
               text: <div>TEXT</div>,
             },
             {
