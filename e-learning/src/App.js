@@ -5,7 +5,7 @@ import "./styles/App.scss";
 import Login from "./Login";
 import { ToastContainer } from "react-toastify";
 import Dashboard from "./Dashboard";
-import Chapter from "./Chapter";
+import Chapter from "./Lecture";
 
 function App() {
   const data = [
@@ -21,12 +21,14 @@ function App() {
           chapterDescription:
             "Basic concept and how it describes the behavior of a function",
           link: "/calculusOne/limits",
+          text: <div>TEXT</div>,
           concepts: [
             {
               title: "Limits at Infinity",
               urlTitle: "atInfinity",
               conceptDescription: "Evaluate limits at infinity and asymptotes",
               link: "/calculusOne/limits/atInifnity",
+              text: <div>TEXT</div>,
             },
           ],
         },
@@ -40,16 +42,18 @@ function App() {
       chapters: [
         {
           title: "Pre-Calculus",
-          urlTitle: "limits",
+          urlTitle: "limits2",
           chapterDescription:
             "Basic concept and how it describes the behavior of a function",
           link: "/preCalculus/limits",
+          text: <div>TEXT</div>,
           concepts: [
             {
               title: "Limits at Infinity",
-              urlTitle: "atInfinity",
+              urlTitle: "atInfinity2",
               conceptDescription: "Evaluate limits at infinity and asymptotes",
               link: "/preCalculus/limits/atInifnity",
+              text: <div>TEXT</div>,
             },
           ],
         },
@@ -65,11 +69,11 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/dashboard" element={<Dashboard data={data} />} />
-          <Route exact path="/:subject/:chapter" element={<Chapter />} />
+          <Route exact path="/:subject/:chapter" element={<Chapter data={data} />} />
           <Route
             exact
             path="/:subject/:chapter/:concept"
-            element={<Chapter />}
+            element={<Chapter data={data} />}
           />
           <Route path="*" element={<Home />} />
         </Routes>

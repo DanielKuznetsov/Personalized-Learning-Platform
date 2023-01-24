@@ -1,6 +1,6 @@
 import "./styles/Header.scss";
 
-function Header({ data }) {
+function Header({ title, description }) {
   return (
     <header className="Header">
       <div className="Header-svg">
@@ -46,9 +46,9 @@ function Header({ data }) {
             <path d="m8.596 13.218c-.051 0-.103-.008-.155-.025l-3.939-1.283c-.263-.086-.406-.368-.321-.63s.367-.406.63-.321l3.939 1.283c.263.086.406.368.321.63-.068.212-.264.346-.475.346z" />
           </g>
         </svg>
-        <p className="Header-title">{data.title}</p>
+        <p className="Header-title">{title}</p>
       </div>
-      <p className="Header-subtitle">{data.subjectDescription}</p>
+      <p className="Header-subtitle">{description}</p>
     </header>
   );
 }

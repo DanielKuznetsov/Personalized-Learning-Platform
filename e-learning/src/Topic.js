@@ -10,9 +10,9 @@ function Topic({ chapter }) {
     <div className="Topic">
       <div className="Topic-header">
         <p className="Topic-title width-1">{chapter.title}</p>
-        <p className="Topic-description width-3">
+        {/* <p className="Topic-description width-3">
           {chapter.chapterDescription}
-        </p>
+        </p> */}
         <Link className="Topic-link width-1" to={chapter.link}>
           View
           <ion-icon name="arrow-forward-outline"></ion-icon>
