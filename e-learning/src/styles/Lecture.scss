@@ -1,3 +1,17 @@
 .Lecture {
-    padding: 3rem;
+  padding: 3rem;
+
+  .wrapper {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+
+    .subject-nav {
+      flex: 1.5;
+    }
+
+    .Content {
+      flex: 6;
+    }
+  }
 }

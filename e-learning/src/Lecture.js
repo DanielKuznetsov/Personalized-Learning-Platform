@@ -1,8 +1,9 @@
 import "./styles/Lecture.scss";
-import "./styles/Dashboard.scss";
 import Navbar from "./Navbar";
 import Header from "./Header";
+import Text from "./Text";
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
 
 function Lecture({ data }) {
   const location = useLocation();
@@ -13,25 +14,57 @@ function Lecture({ data }) {
     .filter((el) => el.urlTitle === subject)[0]
     .chapters.filter((el) => el.urlTitle === chapter);
 
+  const [isActive, setIsActive] = useState(
+    chapterData[0].concepts.map((el) => ({
+      [el.urlTitle]: false,
+    }))
+  );
+
+  const handleOnClick = (e) => {
+    // Fully reset the state
+    setIsActive(
+      chapterData[0].concepts.map((el) => ({
+        [el.urlTitle]: false,
+      }))
+    );
+
+    // Set active only on clicked
+    setIsActive((prevState) => ({
+      ...prevState,
+      [e.target.attributes[0].value]: true,
+    }));
+  };
+
   return (
     <div className="Lecture">
       <Navbar />
       <div className="wrapper">
         <nav className="subject-nav">
           <ul className="subject-nav-list">
+            {/* <li className="subject-nav-item">{chapterData[0].title}</li> */}
             {chapterData[0].concepts.map((concept, index) => (
-              <li key={index * 432} className="subject-nav-item">
+              <li
+                onClick={handleOnClick}
+                key={index * 432}
+                name={concept.urlTitle}
+                className={
+                  isActive[concept.urlTitle]
+                    ? "subject-nav-item active"
+                    : "subject-nav-item"
+                }
+              >
                 {concept.title}
               </li>
             ))}
           </ul>
         </nav>
 
-        <div>
+        <div className="Content">
           <Header
             title={chapterData[0].title}
             description={chapterData[0].chapterDescription}
           />
+          <Text />
         </div>
       </div>
     </div>
