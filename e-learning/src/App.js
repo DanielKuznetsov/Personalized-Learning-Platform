@@ -5,6 +5,7 @@ import "./styles/App.scss";
 import Login from "./Login";
 import { ToastContainer } from "react-toastify";
 import Dashboard from "./Dashboard";
+import Chapter from "./Chapter";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/:subject/:chapter" element={<Chapter />} />
+          <Route exact path="/:subject/:chapter/:concept" element={<Chapter />} />
+          <Route path="*" element={<Home />} />
         </Routes>
       </div>
       <ToastContainer />
