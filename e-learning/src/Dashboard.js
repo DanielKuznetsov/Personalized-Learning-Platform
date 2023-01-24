@@ -38,8 +38,6 @@ function Dashboard({ data }) {
     .filter((x) => x[1] === true)
     .map((x) => x[0])[0];
 
-  // console.log(chapterName)
-
   return (
     <div className="Dashboard">
       <Navbar />
