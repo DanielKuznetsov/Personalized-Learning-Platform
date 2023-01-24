@@ -9,8 +9,8 @@ function Chapter() {
     <div className="Chapter">
       <Navbar />
       <div className="wrapper">
-        <DashboardNav classActive />
-        <Header />
+        {/* <DashboardNav classActive /> */}
+        {/* <Header /> */}
       </div>
     </div>
   );

@@ -38,7 +38,7 @@ function Dashboard({ data }) {
     .filter((x) => x[1] === true)
     .map((x) => x[0])[0];
 
-    console.log(classActive)
+  // console.log(chapterName)
 
   return (
     <div className="Dashboard">
@@ -49,7 +49,9 @@ function Dashboard({ data }) {
           classActive={classActive}
           updateActiveClass={updateActiveClass}
         />
-        <DashboardContent data={data} classActive={classActive} />
+        <DashboardContent
+          data={data.filter((subject) => subject.urlTitle === chapterName)[0]}
+        />
       </div>
     </div>
   );

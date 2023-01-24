@@ -3,17 +3,17 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import TopicConcept from "./TopicConcept";
 
-function Topic() {
+function Topic({ chapter }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="Topic">
       <div className="Topic-header">
-        <p className="Topic-title width-1">Limits</p>
+        <p className="Topic-title width-1">{chapter.title}</p>
         <p className="Topic-description width-3">
-          Some Description About Limits
+          {chapter.chapterDescription}
         </p>
-        <Link className="Topic-link width-1" to="/calculus/limits">
+        <Link className="Topic-link width-1" to={chapter.link}>
           View
           <ion-icon name="arrow-forward-outline"></ion-icon>
         </Link>
@@ -30,8 +30,8 @@ function Topic() {
 
       {isOpen ? (
         <ul className="Topic-ul">
-          {[12, 23, 34].map((el) => (
-            <TopicConcept key={el} />
+          {chapter.concepts.map((concept, index) => (
+            <TopicConcept concept={concept} key={index * 1242} />
           ))}
         </ul>
       ) : (

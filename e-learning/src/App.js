@@ -14,42 +14,46 @@ function App() {
       urlTitle: "calculusOne",
       subjectDescription:
         "Calculus One, also known as Single Variable Calculus, is the study of the basic concepts of calculus",
-      chapters: {
-        limits: {
+      chapters: [
+        {
           title: "Introduction to Limits",
+          urlTitle: "limits",
           chapterDescription:
             "Basic concept and how it describes the behavior of a function",
           link: "/calculusOne/limits",
-          concepts: {
-            atInfinity: {
+          concepts: [
+            {
               title: "Limits at Infinity",
+              urlTitle: "atInfinity",
               conceptDescription: "Evaluate limits at infinity and asymptotes",
               link: "/calculusOne/limits/atInifnity",
             },
-          },
+          ],
         },
-      },
+      ],
     },
     {
       title: "Pre-Calculus",
       urlTitle: "preCalculus",
       subjectDescription:
-        "Calculus One, also known as Single Variable Calculus, is the study of the basic concepts of calculus",
-      chapters: {
-        limits: {
-          title: "Introduction to Limits",
+        "Pre-Calculus, also known as Single Variable Calculus, is the study of the basic concepts of calculus",
+      chapters: [
+        {
+          title: "Pre-Calculus",
+          urlTitle: "limits",
           chapterDescription:
             "Basic concept and how it describes the behavior of a function",
           link: "/preCalculus/limits",
-          concepts: {
-            atInfinity: {
+          concepts: [
+            {
               title: "Limits at Infinity",
+              urlTitle: "atInfinity",
               conceptDescription: "Evaluate limits at infinity and asymptotes",
               link: "/preCalculus/limits/atInifnity",
             },
-          },
+          ],
         },
-      },
+      ],
     },
   ];
 
