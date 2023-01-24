@@ -13,7 +13,7 @@ function Topic() {
         <p className="Topic-description width-3">
           Some Description About Limits
         </p>
-        <Link className="Topic-link width-1" to="/link-to-concept">
+        <Link className="Topic-link width-1" to="/calculus/limits">
           View
           <ion-icon name="arrow-forward-outline"></ion-icon>
         </Link>

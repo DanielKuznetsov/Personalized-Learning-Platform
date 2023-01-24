@@ -46,7 +46,7 @@ function Header({ chapterName }) {
             <path d="m8.596 13.218c-.051 0-.103-.008-.155-.025l-3.939-1.283c-.263-.086-.406-.368-.321-.63s.367-.406.63-.321l3.939 1.283c.263.086.406.368.321.63-.068.212-.264.346-.475.346z" />
           </g>
         </svg>
-        <p className="Header-title">{chapterName}</p>
+        <p className="Header-title">{chapterName || "Title"}</p>
       </div>
       <p className="Header-subtitle">
         There are <b>128 topics</b> available in a library with <b>9</b>{" "}

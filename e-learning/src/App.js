@@ -8,6 +8,51 @@ import Dashboard from "./Dashboard";
 import Chapter from "./Chapter";
 
 function App() {
+  const data = [
+    {
+      title: "Calculus One",
+      urlTitle: "calculusOne",
+      subjectDescription:
+        "Calculus One, also known as Single Variable Calculus, is the study of the basic concepts of calculus",
+      chapters: {
+        limits: {
+          title: "Introduction to Limits",
+          chapterDescription:
+            "Basic concept and how it describes the behavior of a function",
+          link: "/calculusOne/limits",
+          concepts: {
+            atInfinity: {
+              title: "Limits at Infinity",
+              conceptDescription: "Evaluate limits at infinity and asymptotes",
+              link: "/calculusOne/limits/atInifnity",
+            },
+          },
+        },
+      },
+    },
+    {
+      title: "Pre-Calculus",
+      urlTitle: "preCalculus",
+      subjectDescription:
+        "Calculus One, also known as Single Variable Calculus, is the study of the basic concepts of calculus",
+      chapters: {
+        limits: {
+          title: "Introduction to Limits",
+          chapterDescription:
+            "Basic concept and how it describes the behavior of a function",
+          link: "/preCalculus/limits",
+          concepts: {
+            atInfinity: {
+              title: "Limits at Infinity",
+              conceptDescription: "Evaluate limits at infinity and asymptotes",
+              link: "/preCalculus/limits/atInifnity",
+            },
+          },
+        },
+      },
+    },
+  ];
+
   return (
     <>
       <div className="App">
@@ -15,9 +60,13 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
-          <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/dashboard" element={<Dashboard data={data} />} />
           <Route exact path="/:subject/:chapter" element={<Chapter />} />
-          <Route exact path="/:subject/:chapter/:concept" element={<Chapter />} />
+          <Route
+            exact
+            path="/:subject/:chapter/:concept"
+            element={<Chapter />}
+          />
           <Route path="*" element={<Home />} />
         </Routes>
       </div>
