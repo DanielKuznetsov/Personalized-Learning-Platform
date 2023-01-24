@@ -1,0 +1,31 @@
+.subject-nav {
+  width: 15%;
+
+  &-list {
+    list-style: none;
+  }
+  &-item {
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding: 0.6rem 1.35rem;
+    cursor: pointer;
+    opacity: 0.8;
+    border-radius: 0.6rem;
+    transition: all 0.25s ease-in-out;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    &:hover {
+      color: #cc1600;
+      background-color: #f3efea;
+    }
+
+    // Class for conditional renderring of content
+    &.active {
+      color: #cc1600;
+      background-color: #f3efea;
+    }
+  }
+}

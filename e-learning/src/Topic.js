@@ -19,7 +19,11 @@ function Topic() {
         </Link>
         <span className="Topic-more-concepts-btn width-1">
           <button onClick={() => setIsOpen(!isOpen)} className="btn">
-            <ion-icon name="add-circle-outline"></ion-icon>
+            {isOpen ? (
+              <ion-icon name="remove-circle-outline"></ion-icon>
+            ) : (
+              <ion-icon name="add-circle-outline"></ion-icon>
+            )}
           </button>
         </span>
       </div>
