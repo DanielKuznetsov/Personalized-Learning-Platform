@@ -14,6 +14,13 @@ function Lecture({ data }) {
     .filter((el) => el.urlTitle === subject)[0]
     .chapters.filter((el) => el.urlTitle === chapter);
 
+  // Title and description
+  const [content, setContent] = useState({
+    title: chapterData[0].title,
+    description: chapterData[0].chapterDescription,
+  });
+
+  // Active sidebar :hover, :active styles
   const [isActive, setIsActive] = useState(
     chapterData[0].concepts.map((el) => ({
       [el.urlTitle]: false,
@@ -33,6 +40,16 @@ function Lecture({ data }) {
       ...prevState,
       [e.target.attributes[0].value]: true,
     }));
+
+    // Finds title and description on clicked 
+    setContent({
+      title: chapterData[0].concepts.filter(
+        (el) => el.urlTitle === e.target.attributes[0].value
+      )[0].title,
+      description: chapterData[0].concepts.filter(
+        (el) => el.urlTitle === e.target.attributes[0].value
+      )[0].conceptDescription,
+    });
   };
 
   return (
@@ -60,10 +77,7 @@ function Lecture({ data }) {
         </nav>
 
         <div className="Content">
-          <Header
-            title={chapterData[0].title}
-            description={chapterData[0].chapterDescription}
-          />
+          <Header title={content.title} description={content.description} />
           <Text />
         </div>
       </div>
