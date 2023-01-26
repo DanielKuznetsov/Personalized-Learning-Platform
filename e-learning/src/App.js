@@ -26,22 +26,59 @@ function App() {
             {
               title: "Limits at Infinity",
               urlTitle: "infinity",
-              conceptDescription: "121212Evaluate limits at infinity and asymptotes",
+              conceptDescription:
+                "121212Evaluate limits at infinity and asymptotes",
               link: "/calculusOne/limits/infinity",
               text: <div>TEXT</div>,
             },
             {
               title: "Concept 2",
               urlTitle: "conceptwo",
-              conceptDescription: "2342432432Evaluate limits at infinity and asymptotes",
+              conceptDescription:
+                "2342432432Evaluate limits at infinity and asymptotes",
               link: "/calculusOne/limits/conceptwo",
               text: <div>TEXT</div>,
             },
             {
               title: "Concept 3",
               urlTitle: "concepthree",
-              conceptDescription: "45645645Evaluate limits at infinity and asymptotes",
+              conceptDescription:
+                "45645645Evaluate limits at infinity and asymptotes",
               link: "/calculusOne/limits/concepthree",
+              text: <div>TEXT</div>,
+            },
+          ],
+        },
+        {
+          title: "Intdsfnlsmfdsroduction to Limits",
+          urlTitle: "limsdfits",
+          chapterDescription:
+            "Basic sdffsconcept and how it describes the behavior of a function",
+          link: "/calculusOne/limsdfits",
+          text: <div>TEXT</div>,
+          concepts: [
+            {
+              title: "Limits at Infinity limsdfits",
+              urlTitle: "infinity",
+              conceptDescription:
+                "121212Evaluate limits at infinity and asymptotes",
+              link: "/calculusOne/limsdfits/infinity",
+              text: <div>TEXT</div>,
+            },
+            {
+              title: "Concept 2  limsdfits",
+              urlTitle: "conceptwo",
+              conceptDescription:
+                "2342432432Evaluate limsdfits at infinity and asymptotes",
+              link: "/calculusOne/limsdfits/conceptwo",
+              text: <div>TEXT</div>,
+            },
+            {
+              title: "Concept 3  limsdfits",
+              urlTitle: "concepthree",
+              conceptDescription:
+                "45645645Evaluate limsdfits at infinity and asymptotes",
+              link: "/calculusOne/limsdfits/concepthree",
               text: <div>TEXT</div>,
             },
           ],

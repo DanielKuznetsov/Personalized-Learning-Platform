@@ -116,19 +116,19 @@ function Signup() {
   };
 
   if (isLoading) {
-    return <Spinner />
+    return <Spinner />;
   }
 
   return (
     <div className="AuthForm">
       <div className="AuthForm-form-wrapper">
         <div className="content">
-          <Logo />
+          {/* <Logo />
           <p className="title">Let's get started!</p>
           <p className="subtitle">
             Join the community of learners and discover new opportunities for
             growth and development.
-          </p>
+          </p> */}
           {/* <form onSubmit={handleSubmitSignup} className="form"> */}
           <form onSubmit={handleOnSubmit} className="form">
             <label className="form-label" name="name">
@@ -225,6 +225,12 @@ function Signup() {
       </div>
 
       <div className="AuthForm-illustration">
+        <Logo />
+        <p className="title">Let's get started!</p>
+        <p className="subtitle">
+          Join the community of learners and discover new opportunities for
+          growth and development.
+        </p>
         <LottieGif illustration={signupGif} width={500} height={500} />
       </div>
     </div>

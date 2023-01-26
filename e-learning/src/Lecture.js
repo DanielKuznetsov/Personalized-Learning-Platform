@@ -37,6 +37,8 @@ function Lecture({ data }) {
     }));
   };
 
+  // ADD USEEFFECT FOR DATA RENDERING BASED ON URL AND WATCH FOR CHANGES IN PATHNAME
+
   return (
     <div className="Lecture">
       <Navbar />
