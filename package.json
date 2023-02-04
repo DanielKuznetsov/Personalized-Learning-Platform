@@ -31,5 +31,8 @@
     "url": "https://github.com/DanielKuznetsov/Personalized-Learning-Platform/issues"
   },
   "homepage": "https://github.com/DanielKuznetsov/Personalized-Learning-Platform#readme",
-  "description": ""
+  "description": "",
+  "engines": {
+    "node": "14.x"
+  }
 }
