@@ -33,12 +33,10 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "./e-learning/build")));
 
   app.get("*", (req, res) =>
-    res.sendFile(
-      path.resolve(__dirname, "./", "e-learning", "build", "index.html")
-    )
+    res.sendFile(path.resolve(__dirname, "e-learning", "build", "index.html"))
   );
 } else {
-  app.get('/', (req, res) => res.send("Not in production"))
+  app.get("/", (req, res) => res.send("Not in production"));
 }
 
 app.use(errorHandler);
