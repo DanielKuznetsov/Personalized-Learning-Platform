@@ -5,24 +5,7 @@ const { errorHandler } = require("./middleware/errorMiddleware");
 
 const app = express();
 
-app.use(
-  cors({
-    origin: "*",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    preflightContinue: false,
-    optionsSuccessStatus: 204,
-  })
-);
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT");
-  next();
-});
+app.use(cors());
 
 // Body parser, reading data from body into req.body
 app.use(express.json({ limit: "10kb" }));
