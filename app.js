@@ -6,11 +6,15 @@ const { errorHandler } = require("./middleware/errorMiddleware");
 const app = express();
 
 app.use(
-  cors({
-    origin: "https://learning-platform-web-assign.herokuapp.com",
-    credentials: true,
-  })
+  cors()
 );
+
+// app.options("*", function (req, res) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+//   res.header("Access-Control-Allow-Credentials", "true");
+// });
 
 // Body parser, reading data from body into req.body
 app.use(express.json({ limit: "10kb" }));
