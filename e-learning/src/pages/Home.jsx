@@ -1,6 +1,5 @@
-import { useEffect } from "react";
-import Button from "../components/Button";
 import "../styles/Home.scss";
+import Button from "../components/Button";
 import homework from "../images/homework.json";
 import solution from "../images/solution.json";
 import question from "../images/question.json";
@@ -9,6 +8,7 @@ import test from "../images/test.json";
 import FeatureCard from "../components/FeatureCard";
 import Footer from "../components/Footer";
 import LottieGif from "../components/LottieGif";
+import { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Logo from "../components/Logo";

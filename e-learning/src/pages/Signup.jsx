@@ -1,14 +1,14 @@
+import "../styles/AuthForm.scss";
 import Button from "../components/Button";
 import Logo from "../components/Logo";
-import "../styles/AuthForm.scss";
 import signupGif from "../images/signup.json";
 import LottieGif from "../components/LottieGif";
+import Spinner from "../components/Spinner";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { signup, reset } from "../features/auth/authSlice";
 import { toast } from "react-toastify";
-import Spinner from "../components/Spinner";
 
 function Signup() {
   const [formData, setFormData] = useState({

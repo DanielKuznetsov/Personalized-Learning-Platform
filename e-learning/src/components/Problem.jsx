@@ -1,8 +1,7 @@
-import React from "react";
+import "../styles/Problem.scss";
 import ConceptHeader from "./ConceptHeader";
 import OverviewCard from "./OverviewCard";
 import Solution from "./Solution";
-import "../styles/Problem.scss";
 
 function Problem({ correct, wrong, solution, question }) {
   return (

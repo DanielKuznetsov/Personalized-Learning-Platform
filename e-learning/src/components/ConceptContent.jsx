@@ -1,6 +1,5 @@
-import React from "react";
-import OverviewCard from "./OverviewCard";
 import "./styles/ConceptContent.scss";
+import OverviewCard from "./OverviewCard";
 
 function ConceptContent({ subject }) { // subject or concept -> depends on what is fetching
   return (

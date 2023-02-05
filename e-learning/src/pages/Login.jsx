@@ -1,15 +1,15 @@
 import "../styles/AuthForm.scss";
 import Logo from "../components/Logo";
 import Button from "../components/Button";
-import { useState, useEffect } from "react";
 import signInSuccess from "../images/sign-in-success.json";
-import { Link, useNavigate } from "react-router-dom";
 import LottieGif from "../components/LottieGif";
+import Spinner from "../components/Spinner";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { login, reset } from "../features/auth/authSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Spinner from "../components/Spinner";
 
 function Login() {
   const [formData, setFormData] = useState({

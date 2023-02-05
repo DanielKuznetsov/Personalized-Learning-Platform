@@ -1,5 +1,5 @@
-import Navbar from "../components/Navbar";
 import "../styles/Dashboard.scss";
+import Navbar from "../components/Navbar";
 import DashboardContent from "../components/DashboardContent";
 import DashboardNav from "../components/DashboardNav";
 import { useState } from "react";

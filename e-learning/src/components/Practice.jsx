@@ -1,8 +1,7 @@
-import React from "react";
-import ConceptHeader from "./ConceptHeader";
-import OverviewCard from "./OverviewCard";
 import "../styles/Practice.scss";
 import "../styles/ConceptContent.scss";
+import ConceptHeader from "./ConceptHeader";
+import OverviewCard from "./OverviewCard";
 
 function Practice() {
   return (

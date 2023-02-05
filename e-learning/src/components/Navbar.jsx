@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import Button from "./Button";
 import "../styles/Navbar.scss";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import Button from "./Button";
 import Logo from "./Logo";
+import React, { useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
 import { toast } from "react-toastify";

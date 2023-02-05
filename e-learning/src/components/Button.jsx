@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import "../styles/Button.scss";
+import { useEffect, useState } from "react";
 
 function Button({ text, shadow, submit, fullWidth, handleLogout }) {
   const [classes, setClasses] = useState("Button-btn");
