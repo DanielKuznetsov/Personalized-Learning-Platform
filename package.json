@@ -16,7 +16,8 @@
     "validator": "^13.7.0"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix e-learning && npm run build --prefix e-learning"
   },
   "name": "learning-platform",
   "version": "1.0.0",
