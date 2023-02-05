@@ -1,17 +1,17 @@
 import { useEffect } from "react";
-import Button from "./Button";
-import "./styles/Home.scss";
-import homework from "./images/homework.json";
-import solution from "./images/solution.json";
-import question from "./images/question.json";
-import practicing from "./images/practicing.json";
-import test from "./images/test.json";
-import FeatureCard from "./FeatureCard";
-import Footer from "./Footer";
-import LottieGif from "./LottieGif";
+import Button from "../components/Button";
+import "../styles/Home.scss";
+import homework from "../images/homework.json";
+import solution from "../images/solution.json";
+import question from "../images/question.json";
+import practicing from "../images/practicing.json";
+import test from "../images/test.json";
+import FeatureCard from "../components/FeatureCard";
+import Footer from "../components/Footer";
+import LottieGif from "../components/LottieGif";
 import { useNavigate, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Logo from "./Logo";
+import Logo from "../components/Logo";
 
 function Home() {
   const navigate = useNavigate();

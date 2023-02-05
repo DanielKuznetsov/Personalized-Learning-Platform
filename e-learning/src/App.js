@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import Signup from "./Signup";
-import Home from "./Home";
+import Signup from "./pages/Signup";
+import Home from "./pages/Home";
 import "./styles/App.scss";
-import Login from "./Login";
+import Login from "./pages/Login";
 import { ToastContainer } from "react-toastify";
-import Dashboard from "./Dashboard";
-import Chapter from "./Lecture";
+import Dashboard from "./pages/Dashboard";
+import Chapter from "./components/Lecture";
 
 function App() {
   const data = [

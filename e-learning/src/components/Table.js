@@ -1,4 +1,4 @@
-import "./styles/Table.scss";
+import "../styles/Table.scss";
 import Topic from "./Topic";
 
 function Table({ data }) {

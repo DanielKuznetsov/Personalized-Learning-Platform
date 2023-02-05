@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./styles/Solution.scss";
+import "../styles/Solution.scss";
 
 function Solution() {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,4 +1,4 @@
-import "./styles/SubjectOverview.scss";
+import "../styles/SubjectOverview.scss";
 import ConceptHeader from "./ConceptHeader";
 import ConceptContent from "./ConceptContent";
 

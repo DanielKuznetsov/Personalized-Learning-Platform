@@ -1,4 +1,4 @@
-import "./styles/Lecture.scss";
+import "../styles/Lecture.scss";
 import Navbar from "./Navbar";
 import Header from "./Header";
 import Text from "./Text";

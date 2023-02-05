@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/Concept.scss";
+import "../styles/Concept.scss";
 import ConceptHeader from "./ConceptHeader";
 import ConceptContent from "./ConceptContent";
 import { Navigate } from "react-router-dom";

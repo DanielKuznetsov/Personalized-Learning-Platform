@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/OverviewCard.scss";
+import "../styles/OverviewCard.scss";
 
 function OverviewCard() {
   return (

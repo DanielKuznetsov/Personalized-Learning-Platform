@@ -2,7 +2,7 @@ import React from "react";
 import ConceptHeader from "./ConceptHeader";
 import OverviewCard from "./OverviewCard";
 import Solution from "./Solution";
-import "./styles/Problem.scss";
+import "../styles/Problem.scss";
 
 function Problem({ correct, wrong, solution, question }) {
   return (

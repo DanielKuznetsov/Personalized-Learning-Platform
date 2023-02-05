@@ -1,4 +1,4 @@
-import "./styles/FeatureCard.scss";
+import "../styles/FeatureCard.scss";
 import LottieGif from "./LottieGif";
 
 function FeatureCard({ illustrationName, title, subtitle }) {

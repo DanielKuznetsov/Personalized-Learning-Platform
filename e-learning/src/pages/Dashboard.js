@@ -1,7 +1,7 @@
-import Navbar from "./Navbar";
-import "./styles/Dashboard.scss";
-import DashboardContent from "./DashboardContent";
-import DashboardNav from "./DashboardNav";
+import Navbar from "../components/Navbar";
+import "../styles/Dashboard.scss";
+import DashboardContent from "../components/DashboardContent";
+import DashboardNav from "../components/DashboardNav";
 import { useState } from "react";
 
 function Dashboard({ data }) {

@@ -1,4 +1,4 @@
-import "./styles/Text.scss"
+import "../styles/Text.scss"
 
 function Text() {
   return (

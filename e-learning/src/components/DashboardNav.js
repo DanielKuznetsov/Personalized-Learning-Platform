@@ -1,4 +1,4 @@
-import "./styles/DashboardNav.scss";
+import "../styles/DashboardNav.scss";
 
 function DashboardNav({ data, classActive, updateActiveClass }) {
   return (

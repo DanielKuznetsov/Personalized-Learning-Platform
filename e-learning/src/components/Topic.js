@@ -1,4 +1,4 @@
-import "./styles/Topic.scss";
+import "../styles/Topic.scss";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import TopicConcept from "./TopicConcept";
