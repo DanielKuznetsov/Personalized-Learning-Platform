@@ -6,7 +6,9 @@ const { errorHandler } = require("./middleware/errorMiddleware");
 const app = express();
 
 app.use(
-  cors()
+  cors({
+    origin: "*",
+  })
 );
 
 // Body parser, reading data from body into req.body
