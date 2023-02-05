@@ -33,6 +33,13 @@ exports.signupStudent = asyncHandler(async (req, res) => {
   });
 
   if (student) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH");
+
     res.status(201).json({
       student: {
         _id: student._id,
@@ -57,6 +64,13 @@ exports.loginStudent = asyncHandler(async (req, res) => {
   const student = await Student.findOne({ email }).select("+password");
 
   if (student && (await bcrypt.compare(password, student.password))) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH");
+
     res.status(201).json({
       student: {
         _id: student._id,
