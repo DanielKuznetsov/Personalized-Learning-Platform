@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:4000/api/students/";
+const API_URL = "https://learning-platform-web-assign/api/students/";
 
 // Signup a student
 const signup = async (studentData) => {

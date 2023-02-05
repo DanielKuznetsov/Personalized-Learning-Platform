@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import Button from "./Button";
-import Navbar from "./Navbar";
 import "./styles/Home.scss";
 import homework from "./images/homework.json";
 import solution from "./images/solution.json";
