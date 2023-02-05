@@ -38,7 +38,9 @@ function Signup() {
       toast.error(message);
     }
 
-    if (student) {
+    if(!student?.student?.token) {
+      toast.error(student?.message);
+    } else {
       navigate("/dashboard");
       toast.success("Signed-up successfully!");
     }
