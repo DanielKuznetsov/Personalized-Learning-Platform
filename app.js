@@ -3,7 +3,9 @@ const express = require("express");
 const cors = require("cors");
 const { errorHandler } = require("./middleware/errorMiddleware");
 
-const app = express();
+const app = express({
+  origin: "*"
+});
 
 app.use(cors());
 
